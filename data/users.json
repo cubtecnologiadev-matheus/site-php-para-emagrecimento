@@ -1,0 +1,14 @@
+{
+    "user_68ee7aee577b3": {
+        "id": "user_68ee7aee577b3",
+        "name": "metheus henrique",
+        "email": "nobre@gmail.com",
+        "cpf": "62181620369",
+        "phone": "62181620369",
+        "password": "$2y$10$4dXH6R6ofC278x0C9hTv2ec7VHO0h1PjLvWD9DuyvLAqgQrt8oGtO",
+        "created_at": "2025-10-14 13:31:42",
+        "courses": [],
+        "recipes": [],
+        "purchases": []
+    }
+}

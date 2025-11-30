@@ -1,0 +1,54 @@
+[2025-10-13T22:09:17+00:00] TRY GET https://api.anubispay.com.br/v1/transactions/23586321
+[2025-10-13T22:09:18+00:00] HTTP 200 BODY {"id":23586321,"tenantId":"b20748c4-55bb-438e-9337-6082ac670b98","companyId":18819,"amount":38330,"currency":"BRL","paymentMethod":"pix","status":"waiting_payment","installments":1,"paidAt":null,"paid
+[2025-10-13T22:09:21+00:00] TRY GET https://api.anubispay.com.br/v1/transactions/23586321
+[2025-10-13T22:09:21+00:00] HTTP 200 BODY {"id":23586321,"tenantId":"b20748c4-55bb-438e-9337-6082ac670b98","companyId":18819,"amount":38330,"currency":"BRL","paymentMethod":"pix","status":"waiting_payment","installments":1,"paidAt":null,"paid
+[2025-10-13T22:09:26+00:00] TRY GET https://api.anubispay.com.br/v1/transactions/23586321
+[2025-10-13T22:09:26+00:00] HTTP 200 BODY {"id":23586321,"tenantId":"b20748c4-55bb-438e-9337-6082ac670b98","companyId":18819,"amount":38330,"currency":"BRL","paymentMethod":"pix","status":"waiting_payment","installments":1,"paidAt":null,"paid
+[2025-10-13T22:09:30+00:00] TRY GET https://api.anubispay.com.br/v1/transactions/23586321
+[2025-10-13T22:09:30+00:00] HTTP 200 BODY {"id":23586321,"tenantId":"b20748c4-55bb-438e-9337-6082ac670b98","companyId":18819,"amount":38330,"currency":"BRL","paymentMethod":"pix","status":"waiting_payment","installments":1,"paidAt":null,"paid
+[2025-10-13T22:09:34+00:00] TRY GET https://api.anubispay.com.br/v1/transactions/23586321
+[2025-10-13T22:09:34+00:00] HTTP 200 BODY {"id":23586321,"tenantId":"b20748c4-55bb-438e-9337-6082ac670b98","companyId":18819,"amount":38330,"currency":"BRL","paymentMethod":"pix","status":"waiting_payment","installments":1,"paidAt":null,"paid
+[2025-10-13T22:09:38+00:00] TRY GET https://api.anubispay.com.br/v1/transactions/23586321
+[2025-10-13T22:09:38+00:00] HTTP 200 BODY {"id":23586321,"tenantId":"b20748c4-55bb-438e-9337-6082ac670b98","companyId":18819,"amount":38330,"currency":"BRL","paymentMethod":"pix","status":"waiting_payment","installments":1,"paidAt":null,"paid
+[2025-10-13T22:09:42+00:00] TRY GET https://api.anubispay.com.br/v1/transactions/23586321
+[2025-10-13T22:09:42+00:00] HTTP 200 BODY {"id":23586321,"tenantId":"b20748c4-55bb-438e-9337-6082ac670b98","companyId":18819,"amount":38330,"currency":"BRL","paymentMethod":"pix","status":"waiting_payment","installments":1,"paidAt":null,"paid
+[2025-10-13T22:09:46+00:00] TRY GET https://api.anubispay.com.br/v1/transactions/23586321
+[2025-10-13T22:09:46+00:00] HTTP 200 BODY {"id":23586321,"tenantId":"b20748c4-55bb-438e-9337-6082ac670b98","companyId":18819,"amount":38330,"currency":"BRL","paymentMethod":"pix","status":"waiting_payment","installments":1,"paidAt":null,"paid
+[2025-10-13T22:09:50+00:00] TRY GET https://api.anubispay.com.br/v1/transactions/23586321
+[2025-10-13T22:09:50+00:00] HTTP 200 BODY {"id":23586321,"tenantId":"b20748c4-55bb-438e-9337-6082ac670b98","companyId":18819,"amount":38330,"currency":"BRL","paymentMethod":"pix","status":"waiting_payment","installments":1,"paidAt":null,"paid
+[2025-10-13T22:09:54+00:00] TRY GET https://api.anubispay.com.br/v1/transactions/23586321
+[2025-10-13T22:09:54+00:00] HTTP 200 BODY {"id":23586321,"tenantId":"b20748c4-55bb-438e-9337-6082ac670b98","companyId":18819,"amount":38330,"currency":"BRL","paymentMethod":"pix","status":"waiting_payment","installments":1,"paidAt":null,"paid
+[2025-10-13T22:09:58+00:00] TRY GET https://api.anubispay.com.br/v1/transactions/23586321
+[2025-10-13T22:09:58+00:00] HTTP 200 BODY {"id":23586321,"tenantId":"b20748c4-55bb-438e-9337-6082ac670b98","companyId":18819,"amount":38330,"currency":"BRL","paymentMethod":"pix","status":"waiting_payment","installments":1,"paidAt":null,"paid
+[2025-10-13T22:10:02+00:00] TRY GET https://api.anubispay.com.br/v1/transactions/23586321
+[2025-10-13T22:10:02+00:00] HTTP 200 BODY {"id":23586321,"tenantId":"b20748c4-55bb-438e-9337-6082ac670b98","companyId":18819,"amount":38330,"currency":"BRL","paymentMethod":"pix","status":"waiting_payment","installments":1,"paidAt":null,"paid
+[2025-10-13T22:10:06+00:00] TRY GET https://api.anubispay.com.br/v1/transactions/23586321
+[2025-10-13T22:10:06+00:00] HTTP 200 BODY {"id":23586321,"tenantId":"b20748c4-55bb-438e-9337-6082ac670b98","companyId":18819,"amount":38330,"currency":"BRL","paymentMethod":"pix","status":"waiting_payment","installments":1,"paidAt":null,"paid
+[2025-10-13T22:10:10+00:00] TRY GET https://api.anubispay.com.br/v1/transactions/23586321
+[2025-10-13T22:10:10+00:00] HTTP 200 BODY {"id":23586321,"tenantId":"b20748c4-55bb-438e-9337-6082ac670b98","companyId":18819,"amount":38330,"currency":"BRL","paymentMethod":"pix","status":"waiting_payment","installments":1,"paidAt":null,"paid
+[2025-10-13T22:10:14+00:00] TRY GET https://api.anubispay.com.br/v1/transactions/23586321
+[2025-10-13T22:10:14+00:00] HTTP 200 BODY {"id":23586321,"tenantId":"b20748c4-55bb-438e-9337-6082ac670b98","companyId":18819,"amount":38330,"currency":"BRL","paymentMethod":"pix","status":"waiting_payment","installments":1,"paidAt":null,"paid
+[2025-10-13T22:10:18+00:00] TRY GET https://api.anubispay.com.br/v1/transactions/23586321
+[2025-10-13T22:10:18+00:00] HTTP 200 BODY {"id":23586321,"tenantId":"b20748c4-55bb-438e-9337-6082ac670b98","companyId":18819,"amount":38330,"currency":"BRL","paymentMethod":"pix","status":"waiting_payment","installments":1,"paidAt":null,"paid
+[2025-10-13T22:10:22+00:00] TRY GET https://api.anubispay.com.br/v1/transactions/23586321
+[2025-10-13T22:10:22+00:00] HTTP 200 BODY {"id":23586321,"tenantId":"b20748c4-55bb-438e-9337-6082ac670b98","companyId":18819,"amount":38330,"currency":"BRL","paymentMethod":"pix","status":"waiting_payment","installments":1,"paidAt":null,"paid
+[2025-10-13T22:10:26+00:00] TRY GET https://api.anubispay.com.br/v1/transactions/23586321
+[2025-10-13T22:10:26+00:00] HTTP 200 BODY {"id":23586321,"tenantId":"b20748c4-55bb-438e-9337-6082ac670b98","companyId":18819,"amount":38330,"currency":"BRL","paymentMethod":"pix","status":"waiting_payment","installments":1,"paidAt":null,"paid
+[2025-10-13T22:10:30+00:00] TRY GET https://api.anubispay.com.br/v1/transactions/23586321
+[2025-10-13T22:10:30+00:00] HTTP 200 BODY {"id":23586321,"tenantId":"b20748c4-55bb-438e-9337-6082ac670b98","companyId":18819,"amount":38330,"currency":"BRL","paymentMethod":"pix","status":"waiting_payment","installments":1,"paidAt":null,"paid
+[2025-10-13T22:11:09+00:00] TRY GET https://api.anubispay.com.br/v1/transactions/23586321
+[2025-10-13T22:11:09+00:00] HTTP 200 BODY {"id":23586321,"tenantId":"b20748c4-55bb-438e-9337-6082ac670b98","companyId":18819,"amount":38330,"currency":"BRL","paymentMethod":"pix","status":"waiting_payment","installments":1,"paidAt":null,"paid
+[2025-10-13T22:11:09+00:00] TRY GET https://api.anubispay.com.br/v1/transactions/23586321
+[2025-10-13T22:11:10+00:00] HTTP 200 BODY {"id":23586321,"tenantId":"b20748c4-55bb-438e-9337-6082ac670b98","companyId":18819,"amount":38330,"currency":"BRL","paymentMethod":"pix","status":"waiting_payment","installments":1,"paidAt":null,"paid
+[2025-10-13T22:11:13+00:00] TRY GET https://api.anubispay.com.br/v1/transactions/23586321
+[2025-10-13T22:11:14+00:00] HTTP 200 BODY {"id":23586321,"tenantId":"b20748c4-55bb-438e-9337-6082ac670b98","companyId":18819,"amount":38330,"currency":"BRL","paymentMethod":"pix","status":"waiting_payment","installments":1,"paidAt":null,"paid
+[2025-10-13T22:11:18+00:00] TRY GET https://api.anubispay.com.br/v1/transactions/23586321
+[2025-10-13T22:11:18+00:00] HTTP 200 BODY {"id":23586321,"tenantId":"b20748c4-55bb-438e-9337-6082ac670b98","companyId":18819,"amount":38330,"currency":"BRL","paymentMethod":"pix","status":"waiting_payment","installments":1,"paidAt":null,"paid
+[2025-10-13T22:11:55+00:00] TRY GET https://api.anubispay.com.br/v1/transactions/23587182
+[2025-10-13T22:11:55+00:00] HTTP 200 BODY {"id":23587182,"tenantId":"b20748c4-55bb-438e-9337-6082ac670b98","companyId":18819,"amount":27720,"currency":"BRL","paymentMethod":"pix","status":"waiting_payment","installments":1,"paidAt":null,"paid
+[2025-10-13T22:11:58+00:00] TRY GET https://api.anubispay.com.br/v1/transactions/23587182
+[2025-10-13T22:11:58+00:00] HTTP 200 BODY {"id":23587182,"tenantId":"b20748c4-55bb-438e-9337-6082ac670b98","companyId":18819,"amount":27720,"currency":"BRL","paymentMethod":"pix","status":"waiting_payment","installments":1,"paidAt":null,"paid
+[2025-10-14T03:06:12+00:00] TRY GET https://api.anubispay.com.br/v1/transactions/23658559
+[2025-10-14T03:06:12+00:00] HTTP 200 BODY {"id":23658559,"tenantId":"b20748c4-55bb-438e-9337-6082ac670b98","companyId":18819,"amount":4990,"currency":"BRL","paymentMethod":"pix","status":"waiting_payment","installments":1,"paidAt":null,"paidA
+[2025-10-14T03:06:15+00:00] TRY GET https://api.anubispay.com.br/v1/transactions/23658559
+[2025-10-14T03:06:15+00:00] HTTP 200 BODY {"id":23658559,"tenantId":"b20748c4-55bb-438e-9337-6082ac670b98","companyId":18819,"amount":4990,"currency":"BRL","paymentMethod":"pix","status":"waiting_payment","installments":1,"paidAt":null,"paidA

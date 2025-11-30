@@ -1,0 +1,33 @@
+COMO ADICIONAR IMAGENS DOS PRODUTOS
+====================================
+
+Adicione as imagens dos programas de treino nesta pasta com os seguintes nomes:
+
+OBRIGATÓRIAS (usadas no site):
+1. kit-seca-tudo.jpg
+2. kit-cetogenico.jpg
+3. kit-detox.jpg
+4. kit-prometi-secar.jpg
+
+TAMANHO RECOMENDADO: 600x400 pixels (proporção 3:2)
+FORMATO: JPG ou PNG
+PESO: Máximo 500KB por imagem
+
+DICAS PARA AS IMAGENS:
+- Use fotos de pessoas treinando
+- Mostre equipamentos de academia
+- Transmita energia e movimento
+- Evite imagens estáticas ou paradas
+- Prefira fotos com boa iluminação
+
+EXEMPLOS DO QUE USAR:
+✓ Pessoa fazendo exercício
+✓ Equipamentos de treino
+✓ Antes e depois de transformação
+✓ Grupo de pessoas treinando
+
+EXEMPLOS DO QUE EVITAR:
+✗ Fotos de comida (foco é treino!)
+✗ Imagens muito escuras
+✗ Fotos de baixa qualidade
+✗ Imagens com marca d'água

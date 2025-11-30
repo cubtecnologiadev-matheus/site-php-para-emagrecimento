@@ -1,0 +1,40 @@
+COMO ADICIONAR IMAGENS DA PÁGINA INICIAL
+=========================================
+
+Adicione as imagens do banner principal nesta pasta:
+
+OBRIGATÓRIAS (usadas no site):
+1. hero-banner.jpg - Banner principal desktop (1920x800px)
+2. hero-banner-mobile.jpg - Banner mobile (800x600px)
+
+TAMANHO RECOMENDADO:
+- Desktop: 1920x800 pixels (proporção 12:5)
+- Mobile: 800x600 pixels (proporção 4:3)
+
+FORMATO: JPG (melhor compressão para fotos grandes)
+PESO: Máximo 1MB por imagem
+
+DICAS PARA O BANNER:
+- Use imagens de alta energia
+- Pessoas treinando, suando, em ação
+- Academia, equipamentos fitness
+- Cores vibrantes e iluminação forte
+- Transmita motivação e determinação
+
+EXEMPLOS DO QUE USAR:
+✓ Pessoa fazendo exercício intenso
+✓ Grupo em aula de treino
+✓ Academia moderna e equipada
+✓ Atleta determinado(a)
+✓ Movimento e ação
+
+EXEMPLOS DO QUE EVITAR:
+✗ Imagens estáticas ou paradas
+✗ Fotos muito escuras
+✗ Pessoas sentadas ou relaxando
+✗ Foco em comida (foco é TREINO!)
+
+IMPORTANTE:
+- A imagem ficará com 30% de opacidade (overlay escuro)
+- Certifique-se que há contraste para o texto branco
+- Teste em mobile e desktop

@@ -1,0 +1,23 @@
+COMO ADICIONAR IMAGENS DA PÁGINA SOBRE
+=======================================
+
+Adicione as imagens da página "Sobre Nós" nesta pasta:
+
+SUGESTÕES DE IMAGENS:
+1. equipe.jpg - Foto da equipe/treinadores (1200x600px)
+2. missao.jpg - Imagem representando a missão (800x600px)
+3. metodo.jpg - Imagem do método de treino (800x600px)
+4. academia.jpg - Foto da academia/espaço (1200x600px)
+
+TAMANHO RECOMENDADO: Varia conforme o uso
+FORMATO: JPG ou PNG
+PESO: Máximo 800KB por imagem
+
+DICAS:
+- Fotos profissionais da equipe
+- Ambiente de treino organizado
+- Transmita profissionalismo
+- Mostre estrutura e equipamentos
+
+COMO USAR NO PHP:
+<img src="assets/images/sobre/equipe.jpg" alt="Nossa Equipe">

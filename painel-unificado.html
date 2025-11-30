@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Painel Unificado - Monitoramento + PIX Tempo Real</title>
+<style>
+  /* ============ CSS Variables & Reset ============ */
+  :root {
+    --bg: #0d1218;
+    --card: #0f141a;
+    --line: #1b2631;
+    --text: #e5ebf2;
+    --muted: #9aa3ad;
+    --green: #16a34a;
+    --yellow: #facc15;
+    --red: #ef4444;
+    --blue: #3b82f6;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+    background: linear-gradient(180deg, #0e141b, #0b1016 60%, #0a0e13);
+    color: var(--text);
+  }
+
+  /* ============ Login Screen ============ */
+  .login-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, #0e141b, #0b1016 60%, #0a0e13);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+  }
+
+  .login-container.hidden {
+    display: none;
+  }
+
+  .login-box {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 32px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 18px 44px rgba(0, 0, 0, 0.35);
+  }
+
+  .login-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 8px;
+    letter-spacing: 0.2px;
+  }
+
+  .login-subtitle {
+    text-align: center;
+    color: var(--muted);
+    font-size: 13px;
+    margin-bottom: 24px;
+  }
+
+  .form-group {
+    margin-bottom: 16px;
+  }
+
+  .form-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+    margin-bottom: 6px;
+  }
+
+  .form-group input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--line);
+    background: #0e141b;
+    color: var(--text);
+    border-radius: 10px;
+    font-size: 13px;
+    transition: all 0.2s;
+  }
+
+  .form-group input:focus {
+    outline: none;
+    border-color: var(--blue);
+    background: #111823;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  }
+
+  .form-group input:disabled {
+    background: #0a0e13;
+    color: var(--muted);
+    cursor: not-allowed;
+  }
+
+  .login-btn {
+    width: 100%;
+    padding: 10px 12px;
+    background: var(--green);
+    border: none;
+    border-radius: 10px;
+    color: #05130a;
+    font-weight: 800;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .login-btn:hover:not(:disabled) {
+    background: #22c55e;
+  }
+
+  .login-btn:disabled {
+    background: var(--muted);
+    cursor: not-allowed;
+  }
+
+  .login-error {
+    color: var(--red);
+    font-size: 12px;
+    margin-top: 8px;
+    text-align: center;
+    display: none;
+  }
+
+  .login-error.show {
+    display: block;
+  }
+
+  /* ============ Header ============ */
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: linear-gradient(180deg, #0f1620, #0c1118);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--green);
+    box-shadow: 0 0 0 6px rgba(22, 163, 74, 0.15);
+  }
+
+  .brand {
+    font-weight: 800;
+    letter-spacing: 0.2px;
+    font-size: 16px;
+  }
+
+  .spacer {
+    flex: 1;
+  }
+
+  .btn {
+    appearance: none;
+    border: 1px solid var(--line);
+    background: #111823;
+    color: var(--text);
+    padding: 8px 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: all 0.2s;
+  }
+
+  .btn:hover {
+    background: #1a1f2e;
+  }
+
+  .btn.primary {
+    background: var(--green);
+    border-color: rgba(255, 255, 255, 0.08);
+    color: #05130a;
+    font-weight: 800;
+  }
+
+  .btn.primary:hover {
+    background: #22c55e;
+  }
+
+  /* ============ Main Container ============ */
+  .main-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    padding: 16px;
+    max-width: 100%;
+    height: calc(100vh - 90px);
+    overflow: hidden;
+  }
+
+  /* ============ Panel Styling ============ */
+  .panel {
+    display: flex;
+    flex-direction: column;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 18px 44px rgba(0, 0, 0, 0.35);
+  }
+
+  .panel-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 14px 10px;
+    border-bottom: 1px solid var(--line);
+    background: rgba(0, 0, 0, 0.2);
+  }
+
+  .panel-header h2 {
+    margin: 0;
+    font-size: 16px;
+    letter-spacing: 0.2px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .panel-content {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ============ KPIs ============ */
+  .kpis {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    padding: 10px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .kpi {
+    background: #0e141b;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 8px 10px;
+    text-align: center;
+  }
+
+  .kpi .n {
+    font-weight: 800;
+    font-size: 18px;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .kpi .l {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 4px;
+  }
+
+  /* ============ Tables ============ */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    flex: 1;
+  }
+
+  thead th {
+    font-size: 11px;
+    color: #cfd6de;
+    text-align: left;
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--line);
+    background: #0e141b;
+    position: sticky;
+    top: 0;
+    z-index: 5;
+  }
+
+  tbody td {
+    padding: 10px 12px;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.06);
+    font-size: 13px;
+  }
+
+  tbody tr.new {
+    background: linear-gradient(90deg, rgba(34, 197, 94, 0.1), transparent);
+  }
+
+  tbody tr:hover {
+    background: rgba(255, 255, 255, 0.03);
+  }
+
+  /* ============ Badges ============ */
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 6px 10px;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    background: #111a24;
+  }
+
+  .badge .dot {
+    width: 6px;
+    height: 6px;
+    box-shadow: none;
+  }
+
+  .paid {
+    border-color: rgba(34, 197, 94, 0.3);
+  }
+
+  .paid .dot {
+    background: #22c55e;
+  }
+
+  .wait {
+    border-color: rgba(250, 204, 21, 0.3);
+  }
+
+  .wait .dot {
+    background: #facc15;
+  }
+
+  .cancel {
+    border-color: rgba(239, 68, 68, 0.3);
+  }
+
+  .cancel .dot {
+    background: #ef4444;
+  }
+
+  .mono {
+    font-variant-numeric: tabular-nums;
+    font-family: ui-monospace, Consolas, monospace;
+  }
+
+  .muted {
+    color: var(--muted);
+  }
+
+  /* ============ Access Panel Specific ============ */
+  .access-list {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .access-item {
+    display: grid;
+    grid-template-columns: 100px 110px 1fr 100px 140px;
+    gap: 10px;
+    padding: 10px 12px;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.06);
+    align-items: center;
+    font-size: 12px;
+    transition: background 0.2s;
+  }
+
+  .access-item:hover {
+    background: rgba(255, 255, 255, 0.03);
+  }
+
+  .access-item.new {
+    background: linear-gradient(90deg, rgba(34, 197, 94, 0.15), transparent);
+  }
+
+  .access-timestamp {
+    color: var(--muted);
+    font-size: 11px;
+    font-family: ui-monospace, Consolas, monospace;
+  }
+
+  .access-ip {
+    font-family: ui-monospace, Consolas, monospace;
+    font-weight: 600;
+    color: var(--blue);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-break: break-all;
+  }
+
+  .access-location {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    overflow: hidden;
+  }
+
+  .access-location span {
+    font-size: 1.2em;
+  }
+
+  .access-location span:last-child {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .access-type {
+    font-weight: 700;
+    font-size: 11px;
+  }
+
+  .type-br {
+    color: var(--green);
+  }
+
+  .type-internacional {
+    color: var(--red);
+  }
+
+  .type-googlebot {
+    color: #4285f4;
+  }
+
+  .type-facebookbot {
+    color: #e67e22;
+  }
+
+  .bot-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.75em;
+    font-weight: 600;
+    margin-left: 4px;
+  }
+
+  .google-badge {
+    background: #4285f4;
+    color: white;
+  }
+
+  .facebook-badge {
+    background: #ffc107;
+    color: #333;
+  }
+
+  .access-org {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: var(--muted);
+  }
+
+  /* ============ Stats Section (Access Panel) ============ */
+  .stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    padding: 10px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .stat-small {
+    background: #0e141b;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    padding: 8px;
+    text-align: center;
+  }
+
+  .stat-small .n {
+    font-weight: 800;
+    font-size: 16px;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .stat-small .l {
+    font-size: 10px;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+
+  /* ============ Footer ============ */
+  .panel-footer {
+    padding: 10px 12px;
+    color: var(--muted);
+    font-size: 11px;
+    border-top: 1px solid var(--line);
+    background: rgba(0, 0, 0, 0.2);
+  }
+
+  /* ============ Scrollbar ============ */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--line);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--muted);
+  }
+
+  /* ============ Responsive ============ */
+  @media (max-width: 1400px) {
+    .main-container {
+      gap: 12px;
+      padding: 12px;
+    }
+
+    .kpis {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 6px;
+      padding: 8px;
+    }
+
+    .access-item {
+      grid-template-columns: 90px 100px 1fr 80px;
+    }
+
+    thead th,
+    tbody td {
+      padding: 8px 10px;
+      font-size: 12px;
+    }
+  }
+
+  @media (max-width: 1000px) {
+    .main-container {
+      grid-template-columns: 1fr;
+      height: auto;
+      max-height: none;
+    }
+
+    .access-item {
+      grid-template-columns: 80px 1fr;
+    }
+
+    .access-org {
+      display: none;
+    }
+  }
+
+  @media (max-width: 768px) {
+    header {
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 8px;
+    }
+
+    .btn {
+      padding: 6px 10px;
+      font-size: 12px;
+    }
+
+    .main-container {
+      padding: 8px;
+      gap: 8px;
+    }
+
+    .kpi .n {
+      font-size: 14px;
+    }
+
+    .access-item {
+      grid-template-columns: 1fr;
+      gap: 6px;
+    }
+
+    .access-location,
+    .access-org {
+      display: none;
+    }
+
+    thead th,
+    tbody td {
+      padding: 6px 8px;
+      font-size: 11px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- Added login screen container -->
+<div class="login-container" id="login-container">
+  <div class="login-box">
+    <div class="login-title">📊 Painel Unificado</div>
+    <div class="login-subtitle">Faça login para continuar</div>
+
+    <form id="login-form">
+      <div class="form-group">
+        <label for="login-user">Usuário</label>
+        <input 
+          type="text" 
+          id="login-user" 
+          value="admin" 
+          disabled 
+          title="Usuário fixo: admin"
+        >
+      </div>
+
+      <div class="form-group">
+        <label for="login-pass">Senha</label>
+        <input 
+          type="password" 
+          id="login-pass" 
+          placeholder="Digite sua senha" 
+          autocomplete="off"
+          required
+        >
+      </div>
+
+      <button type="submit" class="login-btn" id="login-submit">Entrar</button>
+      <div class="login-error" id="login-error">Senha incorreta</div>
+    </form>
+  </div>
+</div>
+
+<header>
+  <span class="dot" id="live-dot" title="conectado"></span>
+  <div class="brand">📊 Painel Unificado - Monitoramento + PIX</div>
+  <div class="spacer"></div>
+  <button id="btn-access-monitor" class="btn primary">▶️ Iniciar Monitoramento</button>
+  <button id="btn-sound-access" class="btn">🔊 Som Acessos</button>
+  <button id="btn-sound-pix" class="btn">🔊 Som PIX</button>
+  <button id="btn-clear-all" class="btn">🧹 Limpar Tudo</button>
+</header>
+
+<div class="main-container">
+  
+  <!-- LEFT PANEL: Monitoramento de Acessos -->
+  <div class="panel">
+    <div class="panel-header">
+      <h2>🔍 Monitoramento de Acessos</h2>
+      <span class="muted" id="access-status">Parado</span>
+    </div>
+
+    <div class="stats">
+      <div class="stat-small">
+        <div class="n mono" id="stat-total-access">0</div>
+        <div class="l">Total</div>
+      </div>
+      <div class="stat-small">
+        <div class="n mono" id="stat-br">0</div>
+        <div class="l">Brasil</div>
+      </div>
+      <div class="stat-small">
+        <div class="n mono" id="stat-intl">0</div>
+        <div class="l">Internacional</div>
+      </div>
+      <div class="stat-small">
+        <div class="n mono" id="stat-bots">0</div>
+        <div class="l">Bots</div>
+      </div>
+    </div>
+
+    <div class="access-list" id="access-list">
+      <div class="access-item" style="text-align:center;padding:20px;color:var(--muted);">
+        Clique em "Iniciar Monitoramento"
+      </div>
+    </div>
+
+    <div class="panel-footer">
+      Atualiza a cada 2s via <code>painel-api.php</code>
+    </div>
+  </div>
+
+  <!-- RIGHT PANEL: PIX Tempo Real -->
+  <div class="panel">
+    <div class="panel-header">
+      <h2>💳 PIX (tempo real)</h2>
+      <span class="muted" id="pix-since">desde 0</span>
+    </div>
+
+    <div class="kpis">
+      <div class="kpi">
+        <div class="n mono" id="kpi-total">0</div>
+        <div class="l">Total</div>
+      </div>
+      <div class="kpi">
+        <div class="n mono" id="kpi-new">0</div>
+        <div class="l">Novos</div>
+      </div>
+      <div class="kpi">
+        <div class="n mono" id="kpi-wait">0</div>
+        <div class="l">Aguardando</div>
+      </div>
+      <div class="kpi">
+        <div class="n mono" id="kpi-paid">0</div>
+        <div class="l">Pagos</div>
+      </div>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Status</th>
+          <th>Valor</th>
+          <th>Cliente</th>
+          <th>Txid</th>
+          <th>Data</th>
+        </tr>
+      </thead>
+      <tbody id="tbody-pix"></tbody>
+    </table>
+
+    <div class="panel-footer">
+      Atualiza a cada 1s • Log: <code>/api/tmp/create_log.txt</code>
+    </div>
+  </div>
+
+</div>
+
+<!-- Audio Players -->
+<audio id="audio-access" preload="auto"></audio>
+<audio id="audio-pix" preload="auto"></audio>
+
+<script>
+  // ============ Login System ============
+  const loginContainer = document.getElementById('login-container');
+  const loginForm = document.getElementById('login-form');
+  const loginPassInput = document.getElementById('login-pass');
+  const loginError = document.getElementById('login-error');
+  const loginSubmit = document.getElementById('login-submit');
+
+  const validPasswords = ['1pas646881', '2pas646881', '3pas646881', '4pas646881', '5pas646881'];
+
+  loginForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const enteredPass = loginPassInput.value;
+
+    if (validPasswords.includes(enteredPass)) {
+      // Login successful
+      localStorage.setItem('panel_authenticated', 'true');
+      loginContainer.classList.add('hidden');
+      loginPassInput.value = '';
+      loginError.classList.remove('show');
+    } else {
+      // Login failed
+      loginError.textContent = 'Senha incorreta';
+      loginError.classList.add('show');
+      loginPassInput.value = '';
+      loginPassInput.focus();
+    }
+  });
+
+  window.addEventListener('DOMContentLoaded', () => {
+    if (localStorage.getItem('panel_authenticated') === 'true') {
+      loginContainer.classList.add('hidden');
+    } else {
+      loginPassInput.focus();
+    }
+  });
+
+  // ============ Configuração ============
+  const PIX_API = '/api/tmp/create_log.txt';
+  const ACCESS_API = 'painel-api.php';
+  const REFRESH_PIX_MS = 1000;
+  const REFRESH_ACCESS_MS = 2000;
+
+  // ============ Estado Global ============
+  let pixSoundEnabled = (localStorage.getItem('pix_sound') ?? '1') === '1';
+  let accessSoundEnabled = (localStorage.getItem('access_sound') ?? '1') === '1';
+  let accessMonitoringActive = false;
+  let pixLastEid = 0;
+  let pixLastBeepAt = 0;
+  let accessLastSince = 0;
+  let accessStore = new Map();
+  let pixTimer = null;
+  let accessTimer = null;
+
+  // ============ Elementos DOM ============
+  const btnAccessMonitor = document.getElementById('btn-access-monitor');
+  const btnSoundAccess = document.getElementById('btn-sound-access');
+  const btnSoundPix = document.getElementById('btn-sound-pix');
+  const btnClearAll = document.getElementById('btn-clear-all');
+  const liveDot = document.getElementById('live-dot');
+  const accessList = document.getElementById('access-list');
+  const pixTbody = document.getElementById('tbody-pix');
+  const accessStatus = document.getElementById('access-status');
+  const pixSince = document.getElementById('pix-since');
+
+  // Stat elements
+  const statTotalAccess = document.getElementById('stat-total-access');
+  const statBR = document.getElementById('stat-br');
+  const statIntl = document.getElementById('stat-intl');
+  const statBots = document.getElementById('stat-bots');
+  const kpiTotal = document.getElementById('kpi-total');
+  const kpiNew = document.getElementById('kpi-new');
+  const kpiWait = document.getElementById('kpi-wait');
+  const kpiPaid = document.getElementById('kpi-paid');
+
+  // ============ Utilidades ============
+  function money(v) {
+    return Number(v || 0).toLocaleString('pt-BR', {
+      style: 'currency',
+      currency: 'BRL'
+    });
+  }
+
+  function badge(status) {
+    const s = (status || '').toString().toLowerCase();
+    if (s.includes('paid') || s.includes('pago'))
+      return `<span class="badge paid"><span class="dot"></span>Pago</span>`;
+    if (s.includes('wait') || s.includes('created'))
+      return `<span class="badge wait"><span class="dot"></span>Aguardando</span>`;
+    if (s.includes('cancel'))
+      return `<span class="badge cancel"><span class="dot"></span>Cancelado</span>`;
+    return `<span class="badge"><span class="dot"></span>${s}</span>`;
+  }
+
+  function formatTime(sec) {
+    const d = new Date(sec * 1000);
+    const pad = (n) => String(n).padStart(2, '0');
+    return `${pad(d.getHours())}:${pad(d.getMinutes())}:${pad(d.getSeconds())}`;
+  }
+
+  function getFlagEmoji(countryCode) {
+    if (!countryCode || countryCode === 'UN') return '🌐';
+    const codePoints = countryCode
+      .toUpperCase()
+      .split('')
+      .map((c) => 127397 + c.charCodeAt());
+    return String.fromCodePoint(...codePoints);
+  }
+
+  // ============ Som ============
+  function updateSoundUI() {
+    btnSoundAccess.textContent = accessSoundEnabled ? '🔊 Som Acessos' : '🔇 Som Acessos';
+    btnSoundPix.textContent = pixSoundEnabled ? '🔊 Som PIX' : '🔇 Som PIX';
+  }
+
+  updateSoundUI();
+
+  btnSoundAccess.addEventListener('click', () => {
+    accessSoundEnabled = !accessSoundEnabled;
+    localStorage.setItem('access_sound', accessSoundEnabled ? '1' : '0');
+    updateSoundUI();
+  });
+
+  btnSoundPix.addEventListener('click', () => {
+    pixSoundEnabled = !pixSoundEnabled;
+    localStorage.setItem('pix_sound', pixSoundEnabled ? '1' : '0');
+    updateSoundUI();
+  });
+
+  function playPixSound() {
+    if (!pixSoundEnabled) return;
+    const sons = ['/api/tmp/toque.mp3', '/api/tmp/toque1.mp3', '/api/tmp/toque2.mp3'];
+    const aleatorio = sons[Math.floor(Math.random() * sons.length)];
+    const audio = document.getElementById('audio-pix');
+    audio.src = aleatorio;
+    audio.currentTime = 0;
+    audio.play().catch(() => {});
+  }
+
+  function playAccessSound() {
+    if (!accessSoundEnabled) return;
+    try {
+      const ctx = new (window.AudioContext || window.webkitAudioContext)();
+      const now = ctx.currentTime;
+
+      function ping(freq, start, dur, vol) {
+        const o = ctx.createOscillator();
+        const g = ctx.createGain();
+        o.type = 'triangle';
+        o.frequency.setValueAtTime(freq, start);
+        g.gain.setValueAtTime(0.0001, start);
+        g.gain.exponentialRampToValueAtTime(vol, start + 0.02);
+        g.gain.exponentialRampToValueAtTime(0.0001, start + dur);
+        o.connect(g);
+        g.connect(ctx.destination);
+        o.start(start);
+        o.stop(start + dur + 0.02);
+      }
+
+      ping(1300, now + 0.0, 0.16, 0.4);
+      ping(1600, now + 0.18, 0.18, 0.4);
+    } catch (e) {}
+  }
+
+  // ============ PIX Panel ============
+  function renderPixRows(rows, highlight = false) {
+    pixTbody.innerHTML = rows
+      .map(
+        (r) => `
+      <tr class="${highlight ? 'new' : ''}">
+        <td class="mono">${r.eid}</td>
+        <td>${badge(r.status)}</td>
+        <td class="mono">${money(r.amount / 100)}</td>
+        <td class="mono">${(r.email || '').replace(/</g, '&lt;').slice(0, 20)}</td>
+        <td class="mono" title="${r.txid}">${(r.txid || r.id || '')
+          .toString()
+          .slice(0, 20)}</td>
+        <td class="mono">${r.created_at || ''}</td>
+      </tr>
+    `
+      )
+      .join('');
+  }
+
+  async function pixPulse() {
+    try {
+      const res = await fetch(PIX_API, { cache: 'no-store' });
+      if (!res.ok) {
+        liveDot.style.background = '#ef4444';
+        return;
+      }
+      const txt = await res.text();
+      const lines = txt.split(/\r?\n/).filter(Boolean);
+      const entries = [];
+      let eid = 0;
+
+      lines.forEach((l) => {
+        const match = l.match(/\{.*\}/);
+        if (match) {
+          try {
+            const obj = JSON.parse(match[0]);
+            entries.push({
+              eid: ++eid,
+              amount: obj.amount || 0,
+              status: obj.status || 'waiting_payment',
+              email: obj.customer?.email || '',
+              txid: obj.externalRef || obj.id || '',
+              created_at: l.slice(1, 20) || ''
+            });
+          } catch (_) {}
+        }
+      });
+
+      const hadNew = eid > pixLastEid;
+      renderPixRows(entries.slice(-50), hadNew);
+      kpiTotal.textContent = entries.length;
+      kpiNew.textContent = hadNew ? eid - pixLastEid : 0;
+      kpiWait.textContent = entries.filter((e) => /wait|created/i.test(e.status)).length;
+      kpiPaid.textContent = entries.filter((e) => /paid|pago/i.test(e.status)).length;
+
+      if (hadNew && pixSoundEnabled) {
+        const now = Date.now();
+        if (now - pixLastBeepAt > 500) {
+          playPixSound();
+          pixLastBeepAt = now;
+        }
+      }
+
+      pixLastEid = eid;
+      liveDot.style.background = '#22c55e';
+    } catch (e) {
+      liveDot.style.background = '#ef4444';
+    }
+  }
+
+  // ============ Access Panel ============
+  function recalcAccessStats() {
+    let total = 0,
+      br = 0,
+      intl = 0,
+      bots = 0;
+    for (const [, r] of accessStore) {
+      total++;
+      if ((r.country || '').toUpperCase() === 'BR') br++;
+      else intl++;
+      if (r.is_google || r.is_facebook) bots++;
+    }
+    statTotalAccess.textContent = total;
+    statBR.textContent = br;
+    statIntl.textContent = intl;
+    statBots.textContent = bots;
+  }
+
+  function renderAccessEntries(entries) {
+    entries.sort((a, b) => b.mtime - a.mtime);
+    let newCount = 0;
+
+    for (const r of entries) {
+      const key = r.ip;
+
+      if (accessStore.has(key)) {
+        const existing = accessStore.get(key);
+        if (r.mtime > existing.mtime) {
+          accessStore.set(key, r);
+        }
+        continue;
+      }
+
+      accessStore.set(key, r);
+      newCount++;
+
+      const isBR = (String(r.country || '').toUpperCase() === 'BR');
+      const isGoogle = !!r.is_google;
+      const isFacebook = !!r.is_facebook;
+
+      let tipoClass = '';
+      let tipoText = '';
+      let itemClass = 'access-item new';
+
+      if (isGoogle) {
+        tipoClass = 'type-googlebot';
+        tipoText = '🔍 Google';
+        itemClass += ' google-bot';
+      } else if (isFacebook) {
+        tipoClass = 'type-facebookbot';
+        tipoText = '👤 Facebook';
+        itemClass += ' facebook-bot';
+      } else {
+        tipoClass = isBR ? 'type-br' : 'type-internacional';
+        tipoText = isBR ? '🇧🇷 Brasil' : '🌍 Internacional';
+      }
+
+      const flag = getFlagEmoji(r.country);
+
+      let locationText = '';
+      if (r.country && r.city && r.region) {
+        locationText = `${r.city}, ${r.region}`;
+      } else if (r.country && r.city) {
+        locationText = `${r.city}`;
+      } else if (r.country) {
+        locationText = r.country_name || r.country;
+      } else {
+        locationText = 'Desconhecido';
+      }
+
+      const d = new Date(r.mtime * 1000);
+      const pad = (n) => String(n).padStart(2, '0');
+      const timeStr = `${pad(d.getHours())}:${pad(d.getMinutes())}:${pad(d.getSeconds())}`;
+
+      const div = document.createElement('div');
+      div.className = itemClass;
+      div.innerHTML = `
+        <div class="access-timestamp">${timeStr}</div>
+        <div class="access-ip" title="${r.ip}">${r.ip}</div>
+        <div class="access-location" style="display: flex; align-items: center; gap: 6px; overflow: hidden;">
+          <span style="font-size: 1.2em;">${flag}</span>
+          <span style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">${locationText}</span>
+        </div>
+        <div class="access-type ${tipoClass}">${tipoText}</div>
+        <div class="access-org muted" style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;" title="${r.org || '—'}">${r.org || '—'}</div>
+      `;
+      accessList.prepend(div);
+    }
+
+    if (newCount > 0) playAccessSound();
+    recalcAccessStats();
+  }
+
+  async function accessFetchTick() {
+    try {
+      const url = `${ACCESS_API}?since=${accessLastSince}&limit=200&enrich=1&_t=${Date.now()}`;
+      const res = await fetch(url, { cache: 'no-store' });
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      const j = await res.json();
+
+      if (Array.isArray(j.entries) && j.entries.length) {
+        renderAccessEntries(j.entries);
+        const maxM = j.entries.reduce((m, e) => Math.max(m, e.mtime || 0), accessLastSince);
+        if (maxM > accessLastSince) accessLastSince = maxM;
+      }
+    } catch (e) {
+      // silencioso
+    }
+  }
+
+  async function accessFirstLoad() {
+    try {
+      const res = await fetch(`${ACCESS_API}?limit=200&enrich=1&_t=${Date.now()}`, {
+        cache: 'no-store'
+      });
+      const j = await res.json();
+      accessList.innerHTML = '';
+      if (Array.isArray(j.entries)) {
+        renderAccessEntries(j.entries);
+        accessLastSince = j.entries.reduce((m, e) => Math.max(m, e.mtime || 0), 0);
+      }
+    } catch (e) {
+      accessList.innerHTML =
+        '<div class="access-item" style="text-align:center;padding:20px;color:var(--red);">Erro ao carregar dados</div>';
+    }
+  }
+
+  // ============ Controles ============
+  function startAccessMonitoring() {
+    if (accessMonitoringActive) return;
+    accessMonitoringActive = true;
+    accessStatus.textContent = 'Ativo';
+    btnAccessMonitor.textContent = '⏸️ Pausar Monitoramento';
+    accessFirstLoad();
+    accessFetchTick();
+    accessTimer = setInterval(accessFetchTick, REFRESH_ACCESS_MS);
+  }
+
+  function stopAccessMonitoring() {
+    if (!accessMonitoringActive) return;
+    accessMonitoringActive = false;
+    accessStatus.textContent = 'Parado';
+    btnAccessMonitor.textContent = '▶️ Iniciar Monitoramento';
+    clearInterval(accessTimer);
+    accessTimer = null;
+  }
+
+  function clearAllData() {
+    if (!confirm('Limpar todos os painéis?')) return;
+    accessStore.clear();
+    accessList.innerHTML =
+      '<div class="access-item" style="text-align:center;padding:20px;color:var(--muted);">Limpado</div>';
+    pixTbody.innerHTML = '';
+    pixLastEid = 0;
+    accessLastSince = 0;
+    recalcAccessStats();
+    kpiTotal.textContent = '0';
+    kpiNew.textContent = '0';
+    kpiWait.textContent = '0';
+    kpiPaid.textContent = '0';
+  }
+
+  btnAccessMonitor.addEventListener('click', () => {
+    if (accessMonitoringActive) {
+      stopAccessMonitoring();
+    } else {
+      startAccessMonitoring();
+    }
+  });
+
+  btnClearAll.addEventListener('click', clearAllData);
+
+  // ============ Boot ============
+  document.addEventListener('DOMContentLoaded', () => {
+    // Inicia PIX imediatamente
+    pixPulse();
+    pixTimer = setInterval(pixPulse, REFRESH_PIX_MS);
+
+    // Acesso precisa ser iniciado manualmente
+    accessStatus.textContent = 'Parado';
+  });
+
+  // Garante cleanup ao sair
+  window.addEventListener('beforeunload', () => {
+    clearInterval(pixTimer);
+    clearInterval(accessTimer);
+  });
+</script>
+
+</body>
+</html>

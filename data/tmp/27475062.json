@@ -1,0 +1,91 @@
+{
+    "id": "27475062",
+    "status": "waiting_payment",
+    "pix": {
+        "qrcode": "00020126860014br.gov.bcb.pix2564pix.ecomovi.com.br\/qr\/v3\/at\/7a49b4f5-8ffa-4483-9fbb-640e71cc8c0b5204000053039865802BR5925ZIPRAPAY_TECNOLOGIA_FINAN6009ARAPONGAS62070503***6304740F"
+    },
+    "amount_cents": 4990,
+    "quantity": 1,
+    "raw": {
+        "id": 27475062,
+        "tenantId": "b20748c4-55bb-438e-9337-6082ac670b98",
+        "companyId": 18819,
+        "amount": 4990,
+        "currency": "BRL",
+        "paymentMethod": "pix",
+        "status": "waiting_payment",
+        "installments": 1,
+        "paidAt": null,
+        "paidAmount": 0,
+        "refundedAt": null,
+        "refundedAmount": 0,
+        "redirectUrl": null,
+        "returnUrl": null,
+        "postbackUrl": null,
+        "metadata": "{\"origem\":\"site\",\"qtd\":1,\"orderId\":\"ORDER-PIX-20251105-042930-5142\"}",
+        "ip": "187.49.48.151",
+        "externalRef": "ORDER-PIX-20251105-042930-5142",
+        "secureId": "215eb189-6da1-4e67-93f9-df3b632067a2",
+        "secureUrl": "215eb189-6da1-4e67-93f9-df3b632067a2",
+        "createdAt": "2025-11-05T04:29:32.115Z",
+        "updatedAt": "2025-11-05T04:29:32.115Z",
+        "payer": null,
+        "traceable": false,
+        "authorizationCode": null,
+        "basePrice": null,
+        "interestRate": null,
+        "items": [
+            {
+                "title": "Pedido PIX",
+                "quantity": 1,
+                "tangible": true,
+                "unitPrice": 4990,
+                "externalRef": "ORDER-PIX-20251105-042930-5142"
+            }
+        ],
+        "customer": {
+            "id": 28110599,
+            "name": "ADEILSON BATISTA DE OLIVEIRA",
+            "email": "diegosesouzafeitosa@gmail.com",
+            "phone": "21920215454",
+            "birthdate": null,
+            "createdAt": "2025-11-05T04:29:31.053Z",
+            "externalRef": null,
+            "document": {
+                "type": "cpf",
+                "number": "85632635104"
+            },
+            "address": null
+        },
+        "fee": {
+            "netAmount": 4342,
+            "estimatedFee": 647,
+            "fixedAmount": 299,
+            "spreadPercent": 699,
+            "currency": "BRL"
+        },
+        "splits": [
+            {
+                "amount": 4990,
+                "netAmount": 4342,
+                "recipientId": 18819,
+                "chargeProcessingFee": false
+            }
+        ],
+        "refunds": [],
+        "pix": {
+            "qrcode": "00020126860014br.gov.bcb.pix2564pix.ecomovi.com.br\/qr\/v3\/at\/7a49b4f5-8ffa-4483-9fbb-640e71cc8c0b5204000053039865802BR5925ZIPRAPAY_TECNOLOGIA_FINAN6009ARAPONGAS62070503***6304740F",
+            "end2EndId": null,
+            "receiptUrl": null,
+            "expirationDate": "2025-11-06"
+        },
+        "boleto": null,
+        "card": null,
+        "refusedReason": null,
+        "shipping": null,
+        "delivery": null,
+        "threeDS": null
+    },
+    "created_at": "2025-11-05T04:29:32+00:00",
+    "endpoint_used": "https:\/\/api.anubispay.com.br\/v1\/transactions"
+}

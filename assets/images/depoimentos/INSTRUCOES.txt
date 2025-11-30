@@ -1,0 +1,28 @@
+COMO ADICIONAR FOTOS DOS DEPOIMENTOS
+=====================================
+
+Adicione as fotos dos clientes nesta pasta com os seguintes nomes:
+
+OBRIGATÓRIAS (usadas no site):
+1. maria.jpg - Maria Silva (São Paulo, SP)
+2. joao.jpg - João Santos (Rio de Janeiro, RJ)
+3. ana.jpg - Ana Paula Costa (Belo Horizonte, MG)
+4. carlos.jpg - Carlos Oliveira (Curitiba, PR)
+5. juliana.jpg - Juliana Ferreira (Porto Alegre, RS)
+6. roberto.jpg - Roberto Lima (Brasília, DF)
+
+TAMANHO RECOMENDADO: 300x300 pixels (quadrado)
+FORMATO: JPG ou PNG
+PESO: Máximo 200KB por imagem
+
+DICAS PARA AS FOTOS:
+- Use fotos de rosto ou corpo inteiro
+- Prefira fotos com boa iluminação
+- Fotos de "antes e depois" são ótimas
+- Clientes felizes e satisfeitos
+- Fotos em ambiente de treino são ideais
+
+IMPORTANTE:
+- As fotos aparecem em formato circular no site
+- Certifique-se que o rosto está centralizado
+- Evite fotos muito escuras ou desfocadas

@@ -1,0 +1,35 @@
+COMO ADICIONAR VÍDEOS AO SITE
+==============================
+
+Adicione os vídeos nesta pasta para usar no site:
+
+SUGESTÕES DE VÍDEOS:
+1. treino-demo.mp4 - Vídeo demonstrativo de treino
+2. depoimento-video-1.mp4 - Vídeo depoimento de cliente
+3. depoimento-video-2.mp4 - Outro vídeo depoimento
+4. aula-completa.mp4 - Aula de treino completa
+
+FORMATOS ACEITOS: .mp4, .webm, .mov
+TAMANHO RECOMENDADO: Máximo 50MB por vídeo
+RESOLUÇÃO: 1920x1080 (Full HD) ou 1280x720 (HD)
+DURAÇÃO: Entre 30 segundos e 3 minutos
+
+DICAS PARA OS VÍDEOS:
+- Vídeos curtos e dinâmicos
+- Boa qualidade de áudio e vídeo
+- Iluminação adequada
+- Mostre treinos reais
+- Depoimentos autênticos
+
+COMO USAR NO SITE:
+Para adicionar um vídeo em qualquer página PHP, use:
+
+<video controls width="100%">
+  <source src="assets/images/videos/treino-demo.mp4" type="video/mp4">
+  Seu navegador não suporta vídeos.
+</video>
+
+IMPORTANTE:
+- Comprima os vídeos antes de fazer upload
+- Use formato MP4 para melhor compatibilidade
+- Teste a reprodução em diferentes navegadores

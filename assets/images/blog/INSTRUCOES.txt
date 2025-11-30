@@ -1,0 +1,24 @@
+COMO ADICIONAR IMAGENS DO BLOG
+===============================
+
+Adicione as imagens dos posts do blog nesta pasta:
+
+NOMENCLATURA:
+- post-1.jpg (para o post ID 1)
+- post-2.jpg (para o post ID 2)
+- post-3.jpg (para o post ID 3)
+... e assim por diante
+
+TAMANHO RECOMENDADO: 1200x630 pixels (proporção 1.91:1)
+FORMATO: JPG ou PNG
+PESO: Máximo 500KB por imagem
+
+DICAS:
+- Use imagens relacionadas ao conteúdo do post
+- Boa qualidade e resolução
+- Cores vibrantes
+- Relacionadas a treino e fitness
+
+IMPORTANTE:
+- Esse formato (1200x630) é ideal para compartilhamento em redes sociais
+- Mantenha a numeração organizada

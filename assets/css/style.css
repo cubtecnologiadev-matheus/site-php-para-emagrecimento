@@ -1,0 +1,3693 @@
+/* Reset e Variáveis - Fitness theme with vibrant colors */
+:root {
+  /* Fitness color palette - vibrant and energetic */
+  --primary-color: #00ff88;
+  --secondary-color: #ff6b35;
+  --accent-color: #00d4ff;
+  --dark-bg: #0a0e27;
+  --text-color: #1a1a1a;
+  --light-bg: #f8fafb;
+  --white: #ffffff;
+  --gray: #6b7280;
+  --success: #00ff88;
+  --danger: #ff6b35;
+  --whatsapp: #25d366;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: var(--text-color);
+  line-height: 1.6;
+  /* Changing default body background from white to dark gradient */
+  background: linear-gradient(135deg, var(--dark-bg) 0%, #1a1f3a 100%);
+  font-weight: 400;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header - Modern fitness header with bold styling */
+.header {
+  /* Added technological fitness-themed background with gradient and overlay effects */
+  background: linear-gradient(135deg, #0a0f1e 0%, #1a1f3a 50%, #0d1425 100%);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 255, 136, 0.15);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Added tech overlay effects to header background */
+.header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 50%, rgba(0, 255, 136, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 50%, rgba(0, 204, 255, 0.08) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Added subtle grid pattern for tech effect */
+.header::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: linear-gradient(rgba(0, 255, 136, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 136, 0.03) 1px, transparent 1px);
+  background-size: 30px 30px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 0;
+  position: relative;
+  z-index: 2;
+}
+
+.logo h1 {
+  /* Updated logo to display as two lines */
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  gap: 0.1rem;
+}
+
+/* Styling for first line of logo */
+.logo-line-1 {
+  color: var(--white);
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+/* Styling for second line of logo with primary color */
+.logo-line-2 {
+  color: var(--primary-color);
+  font-weight: 900;
+  font-size: 1.8rem;
+  text-shadow: 0 0 20px rgba(0, 255, 136, 0.5);
+}
+
+.logo a {
+  text-decoration: none;
+}
+
+.logo span {
+  color: var(--primary-color);
+  font-weight: 900;
+}
+
+.main-nav ul {
+  display: flex;
+  list-style: none;
+  gap: 2.5rem;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: var(--white);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: all 0.3s;
+  position: relative;
+}
+
+.main-nav a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  transition: width 0.3s;
+}
+
+.main-nav a:hover {
+  color: var(--primary-color);
+}
+
+.main-nav a:hover::after {
+  width: 100%;
+}
+
+/* Added mobile header actions container for login button and hamburger */
+.mobile-header-actions {
+  display: none;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Add styling for user first name display */
+.user-first-name {
+  color: var(--primary-color);
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-right: 8px;
+  text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+  white-space: nowrap;
+}
+
+/* Styling for mobile login button */
+/* Updated to accommodate text "JÁ SOU ALUNO" instead of just icon */
+.mobile-login-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 16px;
+  height: 40px;
+  background: linear-gradient(135deg, var(--primary-color), #00cc6f);
+  border-radius: 20px;
+  color: var(--dark-bg);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s;
+  box-shadow: 0 2px 10px rgba(0, 255, 136, 0.3);
+  white-space: nowrap;
+  margin-right: 10px;
+}
+
+/* Adjust logged-in user icon button to be circular */
+.mobile-login-btn.logged-in {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.mobile-login-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 255, 136, 0.5);
+}
+
+/* Keep icon styling for logged-in users */
+.mobile-login-btn i {
+  font-size: 1.2rem;
+}
+
+.mobile-menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--white);
+}
+
+.btn-nav {
+  background: linear-gradient(135deg, var(--primary-color), #00cc6f) !important;
+  color: var(--dark-bg) !important;
+  padding: 0.6rem 1.5rem !important;
+  border-radius: 8px !important;
+  font-weight: 700 !important;
+  transition: all 0.3s !important;
+}
+
+.btn-nav:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 15px rgba(0, 255, 136, 0.4) !important;
+}
+
+.btn-nav::after {
+  display: none !important;
+}
+
+/* Header Video Background - Vídeos como fundo do page-header */
+.header-video-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70%; /* Cortando 30% da parte de baixo do vídeo */
+  display: none; /* Esconde no desktop */
+  gap: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.header-video {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: top center; /* Posicionando vídeo no topo para mostrar a parte superior */
+  opacity: 0.4; /* Deixa o vídeo semi-transparente para o texto ficar legível */
+}
+
+.header-video-duplicate {
+  display: none;
+}
+
+/* Mobile: mostra dois vídeos lado a lado como fundo */
+@media (max-width: 768px) {
+  .header-video-background {
+    display: flex; /* Mostra os vídeos apenas no mobile */
+  }
+
+  .header-video {
+    width: 50%;
+    height: 100%;
+    flex-shrink: 0;
+    object-fit: cover;
+    object-position: top center;
+    opacity: 0.4;
+  }
+
+  .header-video-duplicate {
+    display: block;
+    width: 50%;
+    height: 100%;
+    flex-shrink: 0;
+    object-fit: cover;
+    object-position: top center;
+    opacity: 0.4;
+  }
+}
+
+/* Hero Section - Dynamic fitness hero with motivational messaging */
+.hero {
+  background: linear-gradient(135deg, var(--dark-bg) 0%, #1a1f3a 100%);
+  color: var(--white);
+  padding: 0.25rem 0 3rem 0; /* Reduzindo ainda mais o padding superior para colar o hero no header */
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+}
+
+.hero-bg-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.3;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 50%, rgba(0, 255, 136, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(0, 212, 255, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 900;
+  margin-bottom: 0.8rem;
+  line-height: 1.1;
+  text-transform: uppercase;
+  letter-spacing: -2px;
+  animation: fadeInUp 0.8s ease;
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-subtitle {
+  font-size: 1.3rem;
+  margin-bottom: 1.2rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.9);
+  animation: fadeInUp 0.8s ease 0.2s both;
+  line-height: 1.6;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  animation: fadeInUp 0.8s ease 0.4s both;
+}
+
+/* Buttons - Bold fitness-inspired buttons */
+.btn {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.95rem;
+  transition: all 0.3s;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.btn:hover::before {
+  left: 100%;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary-color), #00cc6f);
+  color: var(--dark-bg);
+  box-shadow: 0 4px 15px rgba(0, 255, 136, 0.4);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 25px rgba(0, 255, 136, 0.5);
+}
+
+.btn-primary:disabled {
+  background: #cccccc;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--white);
+  border: 2px solid var(--primary-color);
+}
+
+.btn-secondary:hover {
+  background-color: var(--primary-color);
+  color: var(--dark-bg);
+  transform: translateY(-3px);
+}
+
+/* Products Section - Training programs section */
+.featured-products,
+.products-section {
+  margin-top: -3rem;
+  padding: 0 0 3rem 0;
+  /* Replacing light background with dark technological gradient similar to benefits section */
+  background: linear-gradient(135deg, var(--dark-bg) 0%, #1a1f3a 100%);
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+}
+
+/* Adding technological overlay effect to products section */
+.featured-products::before,
+.products-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 50%, rgba(0, 255, 136, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 50%, rgba(0, 212, 255, 0.08) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2.8rem;
+  font-weight: 900;
+  margin-bottom: 0.5rem;
+  color: var(--dark-bg);
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  /* Making section title white for dark backgrounds */
+  position: relative;
+  z-index: 1;
+}
+
+/* Making section titles white when inside dark sections */
+.featured-products .section-title,
+.products-section .section-title,
+.testimonials-preview .section-title {
+  color: var(--white);
+}
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+  margin: 0.8rem auto 1.5rem;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  /* Adding relative positioning for z-index */
+  position: relative;
+  z-index: 1;
+}
+
+.product-card {
+  background-color: var(--white);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s;
+  position: relative;
+  border: 2px solid transparent;
+  /* Enhancing card shadow for dark background */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Removendo link styling do card wrapper */
+.product-card-link {
+  text-decoration: none;
+  display: block;
+  color: inherit;
+}
+
+.product-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 15px 40px rgba(0, 255, 136, 0.2);
+  border-color: var(--primary-color);
+  /* Enhancing hover shadow for dark background */
+  box-shadow: 0 15px 50px rgba(0, 255, 136, 0.4);
+}
+
+.product-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: linear-gradient(135deg, var(--secondary-color), #ff8555);
+  color: var(--white);
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  z-index: 10;
+  box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
+}
+
+.product-image {
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--dark-bg), #1a1f3a);
+  position: relative;
+}
+
+.product-image::after {
+  content: "💪";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4rem;
+  opacity: 0.3;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s;
+}
+
+.product-card:hover .product-image img {
+  transform: scale(1.1);
+}
+
+.product-info {
+  padding: 1.8rem;
+}
+
+.product-info h3 {
+  font-size: 1.3rem;
+  font-weight: 800;
+  margin-bottom: 0.8rem;
+  color: var(--dark-bg);
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+}
+
+.product-description {
+  color: var(--gray);
+  font-size: 0.95rem;
+  margin-bottom: 1.2rem;
+  line-height: 1.5;
+}
+
+.product-price {
+  margin-bottom: 1.2rem;
+}
+
+/* Layout flexbox para preço e botão lado a lado */
+.product-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.product-footer .product-price {
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.price {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: var(--primary-color);
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: var(--gray);
+  font-size: 1rem;
+  margin-right: 0.8rem;
+}
+
+.discount {
+  background: linear-gradient(135deg, var(--primary-color), #00cc6f);
+  color: var(--dark-bg);
+  padding: 0.3rem 0.7rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-right: 0.8rem;
+}
+
+/* Estilo do botão igual ao btn-primary com efeito brilhante */
+.btn-buy {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 1.5rem;
+  background: linear-gradient(135deg, var(--primary-color), #00cc6f);
+  color: var(--dark-bg);
+  border: none;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 4px 15px rgba(0, 255, 136, 0.4);
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-buy::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s;
+}
+
+.product-card:hover .btn-buy::before {
+  left: 100%;
+}
+
+.product-card:hover .btn-buy {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 255, 136, 0.6);
+}
+
+/* Benefits Section - Training benefits with fitness icons */
+.benefits {
+  padding: 5rem 0;
+  background: linear-gradient(135deg, var(--dark-bg) 0%, #1a1f3a 100%);
+  color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+
+.benefits::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 30% 30%, rgba(0, 255, 136, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 70% 70%, rgba(0, 212, 255, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.benefits .section-title {
+  color: var(--white);
+  position: relative;
+  z-index: 1;
+}
+
+.benefits .section-title::after {
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.benefit-item {
+  text-align: center;
+  padding: 2.5rem 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  border: 2px solid rgba(0, 255, 136, 0.1);
+  transition: all 0.4s;
+}
+
+.benefit-item:hover {
+  transform: translateY(-10px);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--primary-color);
+  box-shadow: 0 10px 30px rgba(0, 255, 136, 0.2);
+}
+
+.benefit-item i {
+  font-size: 3.5rem;
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1.5rem;
+  display: block;
+}
+
+.benefit-item h3 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin-bottom: 0.8rem;
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+}
+
+.benefit-item p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Testimonials - Results and transformation stories */
+.testimonials-preview {
+  padding: 5rem 0;
+  /* Replacing light background with dark technological gradient */
+  background: linear-gradient(135deg, #1a1f3a 0%, var(--dark-bg) 100%);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Adding technological overlay effect to testimonials section */
+.testimonials-preview::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 50% 20%, rgba(0, 212, 255, 0.06) 0%, transparent 50%),
+    radial-gradient(circle at 50% 80%, rgba(0, 255, 136, 0.06) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.testimonials-slider {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+  margin-bottom: 3rem;
+  /* Adding relative positioning for z-index */
+  position: relative;
+  z-index: 1;
+}
+
+.testimonial-item {
+  background-color: var(--white);
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+  border: 2px solid transparent;
+  transition: all 0.4s;
+  position: relative;
+  /* CHANGE: Changing testimonial layout to horizontal with square images on the left */
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 1.5rem;
+  text-align: left;
+  /* Enhancing card shadow for dark background */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+.testimonial-item::before {
+  content: '"';
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 5rem;
+  font-weight: 900;
+  color: var(--primary-color);
+  opacity: 0.2;
+  line-height: 1;
+}
+
+.testimonial-item:hover {
+  transform: translateY(-8px);
+  border-color: var(--primary-color);
+  box-shadow: 0 12px 40px rgba(0, 255, 136, 0.15);
+  /* Enhancing hover shadow for dark background */
+  box-shadow: 0 12px 50px rgba(0, 255, 136, 0.35);
+}
+
+.testimonial-content p {
+  font-style: italic;
+  margin-bottom: 1.5rem;
+  color: var(--text-color);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  position: relative;
+  z-index: 1;
+}
+
+.testimonial-author strong {
+  display: block;
+  color: var(--dark-bg);
+  font-weight: 800;
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+}
+
+.testimonial-author span {
+  color: var(--gray);
+  font-size: 0.9rem;
+}
+
+.testimonial-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 1.5rem;
+  border: 4px solid var(--primary-color);
+  box-shadow: 0 6px 20px rgba(0, 255, 136, 0.3);
+  /* CHANGE: Changing testimonial layout to horizontal with square images on the left */
+  width: 120px;
+  height: 120px;
+  border-radius: 8px;
+  margin: 0;
+  flex-shrink: 0;
+}
+
+.testimonial-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Footer - Strong CTA footer with fitness branding */
+.footer {
+  background: linear-gradient(135deg, var(--dark-bg) 0%, #0d1128 100%);
+  color: var(--white);
+  padding: 4rem 0 1.5rem;
+  position: relative;
+}
+
+.footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-color), var(--accent-color), var(--secondary-color));
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.footer-col h4 {
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 1.1rem;
+}
+
+.footer-col p {
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.7;
+}
+
+.footer-col ul {
+  list-style: none;
+}
+
+.footer-col ul li {
+  margin-bottom: 0.8rem;
+}
+
+.footer-col a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: all 0.3s;
+  font-weight: 500;
+}
+
+.footer-col a:hover {
+  color: var(--primary-color);
+  padding-left: 5px;
+}
+
+.footer-cta {
+  margin-top: 1.5rem;
+}
+
+.footer-cta .btn {
+  font-size: 0.9rem;
+  padding: 0.9rem 2rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.social-links a {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  border-radius: 10px;
+  transition: all 0.3s;
+  padding: 0;
+}
+
+.social-links a:hover {
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 8px 20px rgba(0, 255, 136, 0.4);
+}
+
+.social-links a i {
+  color: var(--dark-bg);
+  font-size: 1.2rem;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* WhatsApp Float Button - Fitness-themed floating button */
+.whatsapp-float {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 65px;
+  height: 65px;
+  background: linear-gradient(135deg, var(--whatsapp), #1ea952);
+  color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  box-shadow: 0 6px 25px rgba(37, 211, 102, 0.5);
+  z-index: 999;
+  animation: whatsappPulse 2s infinite;
+  transition: all 0.3s;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 30px rgba(37, 211, 102, 0.6);
+}
+
+@keyframes whatsappPulse {
+  0%,
+  100% {
+    box-shadow: 0 6px 25px rgba(37, 211, 102, 0.5);
+  }
+  50% {
+    box-shadow: 0 6px 35px rgba(37, 211, 102, 0.7), 0 0 0 15px rgba(37, 211, 102, 0.1);
+  }
+}
+
+/* Purchase Notification */
+.purchase-notification {
+  position: fixed;
+  bottom: 110px;
+  left: 20px;
+  background-color: var(--white);
+  padding: 1.2rem 1.8rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  display: none;
+  z-index: 998;
+  animation: slideInLeft 0.5s ease;
+  border-left: 4px solid var(--primary-color);
+}
+
+.notification-content {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.notification-content i {
+  font-size: 1.5rem;
+  color: var(--success);
+}
+
+.notification-text strong {
+  display: block;
+  color: var(--secondary-color);
+  margin-bottom: 0.2rem;
+}
+
+.notification-text span {
+  color: var(--gray);
+  font-size: 0.9rem;
+}
+
+/* Checkout Page */
+.checkout-container {
+  padding: 4rem 0;
+  /* Removed light background, now using dark gradient applied inline in checkout.php */
+  background: linear-gradient(135deg, var(--dark-bg) 0%, #1a1f3a 100%);
+}
+
+.checkout-content {
+  display: grid;
+  grid-template-columns: 1fr 400px;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.checkout-form {
+  /* Changed from dark glassmorphism to off-white background */
+  background: #f8f9fa;
+  border: 1px solid rgba(0, 255, 136, 0.2);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.checkout-form h2 {
+  margin-bottom: 1.5rem;
+  /* Changed text color to dark for white background */
+  color: var(--dark-bg);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  /* Changing label color to white for dark background */
+  color: var(--white);
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 0.8rem;
+  /* Dark theme input styling */
+  background: rgba(255, 255, 255, 0.08);
+  border: 2px solid rgba(0, 255, 136, 0.2);
+  /* Changed text color from white to black for better visibility when typing */
+  color: #000000;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  /* Made background more opaque when focused for better text contrast */
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.btn-block {
+  width: 100%;
+  text-align: center;
+}
+
+/* Adding validation error styles */
+.form-group.error input {
+  border-color: #ff4444;
+}
+
+.form-group .error-message {
+  color: #ff4444;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  display: none;
+}
+
+.form-group.error .error-message {
+  display: block;
+}
+
+.form-group.valid input {
+  border-color: var(--primary-color);
+}
+
+.checkout-summary {
+  /* Changed from dark glassmorphism to off-white background */
+  background: #f8f9fa;
+  border: 1px solid rgba(0, 255, 136, 0.2);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  height: fit-content;
+  position: sticky;
+  top: 100px;
+}
+
+.checkout-summary h3 {
+  margin-bottom: 1.5rem;
+  /* Changing text color to white for dark background */
+  color: var(--white);
+}
+
+.summary-product {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.summary-product img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.summary-product h4 {
+  font-size: 1rem;
+  margin-bottom: 0.3rem;
+  color: var(--secondary-color);
+}
+
+.summary-product p {
+  font-size: 0.85rem;
+  color: var(--gray);
+}
+
+.summary-details {
+  margin-bottom: 1.5rem;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.8rem;
+  font-size: 0.95rem;
+}
+
+.summary-row.discount {
+  color: var(--success);
+}
+
+.summary-row.total {
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding-top: 1rem;
+  border-top: 2px solid #e0e0e0;
+  color: var(--primary-color);
+}
+
+.payment-info {
+  background-color: var(--light-bg);
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.payment-info h4 {
+  margin-bottom: 0.5rem;
+  color: var(--secondary-color);
+}
+
+.payment-info p {
+  font-size: 0.9rem;
+  color: var(--gray);
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background-color: var(--white);
+  border-radius: 15px;
+  max-width: 500px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.modal-header h3 {
+  margin: 0;
+  color: var(--secondary-color);
+}
+
+.modal-close {
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--gray);
+  transition: color 0.3s;
+}
+
+.modal-close:hover {
+  color: var(--secondary-color);
+}
+
+.modal-body {
+  padding: 2rem;
+}
+
+.loading {
+  text-align: center;
+  padding: 2rem;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid #e0e0e0;
+  border-top-color: var(--primary-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 1rem;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.pix-qrcode {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.pix-qrcode img {
+  max-width: 250px;
+  width: 100%;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.pix-info {
+  background-color: var(--light-bg);
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.pix-info p {
+  margin-bottom: 0.5rem;
+}
+
+.status-pending {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.status-paid {
+  color: var(--success);
+  font-weight: 600;
+}
+
+.pix-copy {
+  margin-bottom: 1.5rem;
+}
+
+.pix-copy label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--secondary-color);
+}
+
+.copy-container {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.copy-container input {
+  flex: 1;
+  padding: 0.8rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 0.9rem;
+}
+
+.pix-instructions {
+  background-color: var(--light-bg);
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.pix-instructions h4 {
+  margin-bottom: 0.8rem;
+  color: var(--secondary-color);
+}
+
+.pix-instructions ol {
+  margin-left: 1.2rem;
+}
+
+.pix-instructions li {
+  margin-bottom: 0.5rem;
+  color: var(--gray);
+}
+
+.success-icon {
+  width: 80px;
+  height: 80px;
+  background-color: var(--success);
+  color: var(--white);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  margin: 0 auto 1.5rem;
+}
+
+#pixSuccess {
+  text-align: center;
+}
+
+#pixSuccess h3 {
+  color: var(--success);
+  margin-bottom: 1rem;
+}
+
+#pixSuccess p {
+  margin-bottom: 0.8rem;
+  color: var(--gray);
+}
+
+#pixSuccess .btn {
+  margin-top: 1.5rem;
+}
+
+/* Auth Pages - Fitness-themed auth pages */
+.auth-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--dark-bg) 0%, #1a1f3a 100%);
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.auth-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 50%, rgba(0, 255, 136, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(0, 212, 255, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.auth-box {
+  background-color: var(--white);
+  padding: 3rem;
+  border-radius: 20px;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+  max-width: 450px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.auth-logo {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.auth-logo h1 {
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 2.2rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+}
+
+.auth-box h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: var(--secondary-color);
+}
+
+.auth-form {
+  margin-bottom: 1.5rem;
+}
+
+.auth-footer {
+  text-align: center;
+}
+
+.auth-footer p {
+  margin-bottom: 0.5rem;
+  color: var(--gray);
+}
+
+.auth-footer a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.auth-footer a:hover {
+  text-decoration: underline;
+}
+
+.alert {
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+.alert-error {
+  background-color: #ffe5e5;
+  color: var(--danger);
+  border: 1px solid var(--danger);
+}
+
+.alert-success {
+  background-color: #e5ffe5;
+  color: var(--success);
+  border: 1px solid var(--success);
+}
+
+/* Dashboard */
+.dashboard-container {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+  min-height: calc(100vh - 200px);
+}
+
+.dashboard-sidebar {
+  background: linear-gradient(135deg, var(--dark-bg) 0%, #1a1f3a 100%);
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  height: fit-content;
+  position: sticky;
+  top: 100px;
+  color: var(--white);
+}
+
+.user-info {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.user-avatar {
+  width: 90px;
+  height: 90px;
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  color: var(--dark-bg);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin: 0 auto 1rem;
+  box-shadow: 0 6px 20px rgba(0, 255, 136, 0.4);
+}
+
+.user-info h3 {
+  margin-bottom: 0.3rem;
+  color: var(--white);
+  font-weight: 800;
+}
+
+.user-info p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+}
+
+.dashboard-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.dashboard-nav a {
+  padding: 1rem 1.2rem;
+  border-radius: 10px;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.8);
+  transition: all 0.3s;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+.dashboard-nav a:hover,
+.dashboard-nav a.active {
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  color: var(--dark-bg);
+  transform: translateX(5px);
+}
+
+.dashboard-content {
+  background-color: var(--white);
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+.dashboard-content h1 {
+  margin-bottom: 2rem;
+  color: var(--dark-bg);
+  font-weight: 900;
+  font-size: 2.2rem;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+}
+
+.dashboard-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.stat-card {
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  color: var(--dark-bg);
+  padding: 2rem 1.5rem;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0, 255, 136, 0.3);
+  transition: all 0.3s;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 255, 136, 0.4);
+}
+
+.stat-card h3 {
+  font-size: 3rem;
+  font-weight: 900;
+  margin-bottom: 0.5rem;
+}
+
+.stat-card p {
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.course-card {
+  background-color: var(--light-bg);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s;
+}
+
+.course-card:hover {
+  transform: translateY(-5px);
+}
+
+.course-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.course-card h3 {
+  padding: 1rem;
+  font-size: 1rem;
+  color: var(--secondary-color);
+}
+
+.course-card .btn {
+  margin: 0 1rem 1rem;
+  width: calc(100% - 2rem);
+}
+
+.empty-state {
+  text-align: center;
+  padding: 3rem;
+  color: var(--gray);
+}
+
+.empty-state a {
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Melhorias completas de responsividade mobile */
+@media (max-width: 768px) {
+  /* Header mobile */
+  .mobile-header-actions {
+    display: flex;
+  }
+
+  .mobile-menu-toggle {
+    display: block;
+    z-index: 1001;
+  }
+
+  /* Menu mobile com dropdown vertical funcional */
+  .main-nav {
+    display: block;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background: linear-gradient(135deg, var(--dark-bg) 0%, #1a1f3a 100%);
+    padding: 5rem 0 2rem;
+    transition: right 0.4s ease;
+    z-index: 1000;
+    overflow-y: auto;
+    box-shadow: -5px 0 25px rgba(0, 0, 0, 0.3);
+  }
+
+  .main-nav.active {
+    right: 0;
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .main-nav ul li {
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .main-nav a {
+    display: block;
+    padding: 1.2rem 2rem;
+    font-size: 0.95rem;
+    transition: all 0.3s;
+  }
+
+  .main-nav a:hover {
+    background: rgba(0, 255, 136, 0.1);
+    padding-left: 2.5rem;
+  }
+
+  .main-nav a::after {
+    display: none;
+  }
+
+  .btn-nav {
+    margin: 0.5rem 2rem !important;
+    display: block !important;
+    text-align: center !important;
+    width: calc(100% - 4rem) !important;
+  }
+
+  /* Overlay quando menu está aberto */
+  .main-nav.active::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 280px;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+  }
+
+  /* Hero mobile - reduzindo padding superior para aproximar do header */
+  .hero {
+    /* Mantendo padding superior pequeno (próximo ao header) mas aumentando padding inferior para evitar sobreposição */
+    padding: 0.5rem 0 4rem 0;
+    min-height: 500px; /* Garantindo altura mínima para mostrar todo o conteúdo */
+  }
+
+  /* Reduzindo espaçamento do título */
+  .hero-title {
+    font-size: 1.8rem;
+    letter-spacing: -1px;
+    line-height: 1.2;
+    margin-bottom: 0.8rem;
+  }
+
+  /* Reduzindo espaçamento do subtítulo */
+  .hero-subtitle {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+  }
+
+  /* Reduzindo gap entre botões */
+  .hero-cta {
+    flex-direction: column;
+    gap: 0.8rem;
+    align-items: stretch;
+  }
+
+  .hero-cta .btn {
+    width: 100%;
+    padding: 0.9rem 1.5rem;
+    font-size: 0.85rem;
+  }
+
+  /* Sections mobile - espaçamento reduzido */
+  .featured-products,
+  .benefits,
+  .testimonials-preview {
+    padding: 3rem 0;
+  }
+
+  /* Puxando a seção de produtos para cima no mobile para o título ficar dentro da imagem do hero */
+  .products-preview,
+  .featured-products {
+    margin-top: -8rem;
+    position: relative;
+    z-index: 10;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+    line-height: 1.2;
+    margin-bottom: 0.8rem;
+  }
+
+  /* Products grid mobile */
+  .products-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .product-card {
+    max-width: 100%;
+  }
+
+  .product-image {
+    height: 200px;
+  }
+
+  .product-info {
+    padding: 1.5rem;
+  }
+
+  .product-info h3 {
+    font-size: 1.1rem;
+  }
+
+  .product-description {
+    font-size: 0.9rem;
+  }
+
+  /* Layout mobile: botão ao lado do preço */
+  .product-price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .product-price .price-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .product-price .btn-buy {
+    margin: 0;
+    padding: 0.7rem 1.2rem;
+    font-size: 0.75rem;
+    white-space: nowrap;
+  }
+
+  .price {
+    font-size: 1.5rem;
+  }
+
+  /* Benefits mobile */
+  .benefits-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .benefit-item {
+    padding: 2rem 1.2rem;
+  }
+
+  .benefit-item i {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .benefit-item h3 {
+    font-size: 1.2rem;
+  }
+
+  .benefit-item p {
+    font-size: 0.9rem;
+  }
+
+  /* Testimonials mobile */
+  .testimonials-slider {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .testimonial-item {
+    padding: 2rem 1.5rem;
+  }
+
+  .testimonial-item::before {
+    font-size: 3rem;
+    top: 15px;
+    left: 15px;
+  }
+
+  .testimonial-content p {
+    font-size: 0.95rem;
+  }
+
+  .testimonial-image {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1rem;
+  }
+
+  /* Footer mobile */
+  .footer {
+    padding: 3rem 0 1.5rem;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .footer-col h4 {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+
+  /* WhatsApp button mobile */
+  .whatsapp-float {
+    bottom: 20px;
+    right: 20px;
+    width: 55px;
+    height: 55px;
+    font-size: 1.6rem;
+  }
+
+  /* Purchase notification mobile */
+  .purchase-notification {
+    left: 10px;
+    right: 10px;
+    bottom: 90px;
+    padding: 1rem;
+  }
+
+  .notification-content {
+    gap: 0.8rem;
+  }
+
+  .notification-content i {
+    font-size: 1.2rem;
+  }
+
+  .notification-text strong {
+    font-size: 0.9rem;
+  }
+
+  .notification-text span {
+    font-size: 0.8rem;
+  }
+
+  /* Checkout mobile */
+  .checkout-container {
+    padding: 2rem 0;
+  }
+
+  .checkout-content {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .checkout-summary {
+    position: static;
+  }
+
+  .checkout-form,
+  .checkout-summary {
+    padding: 1.5rem;
+  }
+
+  /* Increasing "Gerar QR Code PIX" button size for mobile */
+  .checkout-form .btn-primary.btn-block {
+    padding: 1.2rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 800;
+  }
+
+  /* Dashboard mobile */
+  .dashboard-container {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+    gap: 1.5rem;
+  }
+
+  .dashboard-sidebar {
+    position: static;
+    padding: 1.5rem;
+  }
+
+  .user-avatar {
+    width: 70px;
+    height: 70px;
+    font-size: 2rem;
+  }
+
+  .dashboard-nav a {
+    padding: 0.8rem 1rem;
+    font-size: 0.8rem;
+  }
+
+  .dashboard-content {
+    padding: 1.5rem;
+  }
+
+  .dashboard-content h1 {
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .dashboard-stats {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .stat-card {
+    padding: 1.5rem 1rem;
+  }
+
+  .stat-card h3 {
+    font-size: 2.5rem;
+  }
+
+  .courses-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Auth pages mobile */
+  .auth-container {
+    padding: 1.5rem;
+  }
+
+  .auth-box {
+    padding: 2rem 1.5rem;
+  }
+
+  .auth-logo h1 {
+    font-size: 1.8rem;
+  }
+
+  /* Modal mobile */
+  .modal-content {
+    width: 95%;
+    max-width: 95%;
+  }
+
+  .modal-header {
+    padding: 1rem;
+  }
+
+  .modal-body {
+    padding: 1.5rem;
+  }
+
+  .pix-qrcode img {
+    max-width: 200px;
+  }
+
+  /* Buttons mobile */
+  .btn {
+    padding: 0.85rem 1.8rem;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+  }
+
+  .btn-block {
+    width: 100%;
+  }
+
+  /* Container mobile */
+  .container {
+    padding: 0 15px;
+  }
+
+  /* Compactando page-header no mobile */
+  .page-header {
+    padding: 0.2rem 0 1rem 0; /* Colando o texto mais próximo do header */
+  }
+
+  .page-header h1 {
+    font-size: 1.6rem;
+    margin-top: 0; /* Removendo margem superior para colar no cabeçalho */
+    margin-bottom: 0.3rem;
+    letter-spacing: -0.5px;
+    line-height: 1.1;
+  }
+
+  .page-header p {
+    font-size: 0.9rem;
+    line-height: 1.3;
+    letter-spacing: -0.3px;
+  }
+
+  /* Making price section more compact in mobile view */
+  .product-detail-container {
+    padding: 2rem 0;
+  }
+
+  .product-image-wrapper {
+    max-height: 300px;
+  }
+
+  .product-title {
+    font-size: 1.6rem;
+  }
+
+  .product-description-main {
+    font-size: 1rem;
+  }
+
+  /* Significantly reduced padding and made price display inline for compact mobile view */
+  .product-price-section {
+    padding: 0.6rem 1rem;
+  }
+
+  .current-price-large {
+    display: flex;
+    align-items: baseline;
+    gap: 0.4rem;
+    flex-wrap: nowrap;
+    margin-bottom: 0;
+  }
+
+  .price-label-main {
+    font-size: 0.85rem;
+    margin-bottom: 0;
+    white-space: nowrap;
+  }
+
+  .currency {
+    font-size: 1.2rem;
+    margin-top: 0;
+  }
+
+  .amount {
+    font-size: 2rem;
+    line-height: 1;
+  }
+
+  .btn-buy-large {
+    padding: 1.2rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  .product-security-badges {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+/* Ajustes extras para telas muito pequenas - reduzindo ainda mais o espaçamento */
+@media (max-width: 480px) {
+  /* Hero ainda mais compacto em telas pequenas */
+  .hero {
+    padding: 0.5rem 0 3.5rem 0;
+    min-height: 450px;
+  }
+
+  /* Ajustando margin negativo para telas menores */
+  .products-preview,
+  .featured-products {
+    margin-top: -7rem;
+  }
+
+  .hero-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .hero-cta {
+    gap: 0.6rem;
+  }
+
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .product-info h3 {
+    font-size: 1rem;
+  }
+
+  .benefit-item h3 {
+    font-size: 1.1rem;
+  }
+
+  .btn {
+    padding: 0.75rem 1.5rem;
+    font-size: 0.8rem;
+  }
+
+  /* Compactando ainda mais em telas menores */
+  .page-header {
+    padding: 0.15rem 0 0.8rem 0; /* Colando ainda mais no cabeçalho em telas pequenas */
+  }
+
+  .page-header h1 {
+    font-size: 1.4rem;
+    margin-top: 0; /* Sem margem superior */
+    margin-bottom: 0.25rem;
+  }
+
+  .page-header p {
+    font-size: 0.85rem;
+  }
+
+  /* Further compacting price section for very small screens */
+  .product-price-section {
+    padding: 0.25rem 0.6rem;
+    line-height: 1.1;
+  }
+
+  .price-label-main {
+    font-size: 0.75rem;
+    line-height: 1.1;
+  }
+
+  .currency {
+    font-size: 1rem;
+    line-height: 1.1;
+  }
+
+  .amount {
+    font-size: 1.8rem;
+    line-height: 1.1;
+  }
+
+  .highlight-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .product-discount-badge {
+    top: 10px;
+    right: 10px;
+    padding: 0.7rem 1rem;
+  }
+
+  .discount-percent {
+    font-size: 1.5rem;
+  }
+
+  .discount-text {
+    font-size: 0.75rem;
+  }
+}
+
+/* Product Detail Page - Redesigned with fitness theme */
+/* Adding dark background styling for product detail page */
+.product-detail-container {
+  background: linear-gradient(135deg, var(--dark-bg) 0%, #1a1f3a 100%);
+  min-height: 100vh;
+  padding: 2rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.product-detail-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 50%, rgba(0, 255, 136, 0.06) 0%, transparent 50%),
+    radial-gradient(circle at 80% 50%, rgba(0, 212, 255, 0.06) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.product-detail-container .container {
+  position: relative;
+  z-index: 1;
+}
+
+.product-detail-hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  margin-bottom: 4rem;
+  align-items: start;
+}
+
+.product-detail-image {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, var(--dark-bg), #1a1f3a);
+}
+
+.product-image-wrapper {
+  width: 100%;
+  max-height: 500px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  max-height: 500px;
+}
+
+.product-discount-badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: linear-gradient(135deg, var(--secondary-color), #ff8555);
+  color: var(--white);
+  padding: 1rem 1.5rem;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(255, 107, 53, 0.5);
+  z-index: 10;
+}
+
+.discount-percent {
+  display: block;
+  font-size: 2rem;
+  font-weight: 900;
+  line-height: 1;
+  margin-bottom: 0.2rem;
+}
+
+.discount-text {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.product-detail-info {
+  position: sticky;
+  top: 100px;
+}
+
+.product-category {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  color: var(--dark-bg);
+  padding: 0.5rem 1.2rem;
+  border-radius: 25px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 1.5rem;
+}
+
+.product-title {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--dark-bg);
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+}
+
+.product-description-main {
+  font-size: 1.1rem;
+  color: var(--gray);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.product-rating {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 2px solid var(--light-bg);
+}
+
+.stars {
+  display: flex;
+  gap: 0.3rem;
+}
+
+.stars i {
+  color: #ffc107;
+  font-size: 1.2rem;
+}
+
+.rating-text {
+  color: var(--gray);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.product-price-section {
+  background: linear-gradient(135deg, rgba(0, 255, 136, 0.05), rgba(0, 212, 255, 0.05));
+  padding: 2rem;
+  border-radius: 16px;
+  margin-bottom: 2rem;
+  border: 2px solid var(--primary-color);
+}
+
+.price-comparison {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.price-label {
+  font-size: 0.9rem;
+  color: var(--gray);
+  font-weight: 600;
+}
+
+.old-price-large {
+  font-size: 1.3rem;
+  color: var(--gray);
+  text-decoration: line-through;
+  font-weight: 600;
+}
+
+.current-price-large {
+  margin-bottom: 1rem;
+}
+
+.price-label-main {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--gray);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.price-value {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.currency {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: var(--primary-color);
+  margin-top: 0.3rem;
+}
+
+.amount {
+  font-size: 3.5rem;
+  font-weight: 900;
+  color: var(--primary-color);
+  line-height: 1;
+}
+
+.savings-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, var(--primary-color), #00cc6f);
+  color: var(--dark-bg);
+  padding: 0.6rem 1.2rem;
+  border-radius: 25px;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.product-highlights {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.highlight-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: var(--white);
+  border-radius: 12px;
+  border: 2px solid var(--light-bg);
+  transition: all 0.3s;
+}
+
+.highlight-item:hover {
+  border-color: var(--primary-color);
+  transform: translateX(5px);
+}
+
+.highlight-item i {
+  font-size: 2rem;
+  color: var(--primary-color);
+  min-width: 40px;
+}
+
+.highlight-item strong {
+  display: block;
+  color: var(--dark-bg);
+  font-weight: 800;
+  font-size: 1rem;
+  margin-bottom: 0.2rem;
+}
+
+.highlight-item span {
+  display: block;
+  color: var(--gray);
+  font-size: 0.85rem;
+}
+
+.btn-buy-large {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+  padding: 1.5rem 2rem;
+  background: linear-gradient(135deg, var(--secondary-color), #ff8555);
+  color: var(--white);
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 8px 25px rgba(255, 107, 53, 0.4);
+  text-decoration: none;
+  margin-bottom: 1.5rem;
+}
+
+.btn-buy-large:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(255, 107, 53, 0.5);
+}
+
+.btn-buy-large i {
+  font-size: 1.3rem;
+}
+
+.product-security-badges {
+  display: flex;
+  justify-content: space-around;
+  gap: 1rem;
+  padding: 1.5rem;
+  background-color: var(--light-bg);
+  border-radius: 12px;
+}
+
+.security-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: center;
+}
+
+.security-item i {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+}
+
+.security-item span {
+  font-size: 0.75rem;
+  color: var(--gray);
+  font-weight: 600;
+}
+
+.product-benefits-section,
+.product-courses-section,
+.product-recipes-section {
+  margin-bottom: 4rem;
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--dark-bg);
+  margin-bottom: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+}
+
+.section-heading i {
+  color: var(--primary-color);
+  font-size: 2.2rem;
+}
+
+.benefits-list-detailed {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.benefit-card {
+  display: flex;
+  gap: 1.5rem;
+  padding: 2rem;
+  background-color: var(--white);
+  border-radius: 16px;
+  border: 2px solid var(--light-bg);
+  transition: all 0.3s;
+}
+
+.benefit-card:hover {
+  border-color: var(--primary-color);
+  transform: translateX(5px);
+  box-shadow: 0 10px 30px rgba(0, 255, 136, 0.15);
+}
+
+.benefit-icon {
+  min-width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 255, 136, 0.3);
+}
+
+.benefit-icon i {
+  font-size: 1.8rem;
+  color: var(--dark-bg);
+}
+
+.benefit-content h3 {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--dark-bg);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+}
+
+.benefit-content p {
+  font-size: 0.95rem;
+  color: var(--gray);
+  line-height: 1.6;
+}
+
+.courses-detailed-grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.course-detail-card {
+  padding: 2.5rem;
+  background-color: var(--white);
+  border-radius: 16px;
+  border: 2px solid var(--light-bg);
+  transition: all 0.3s;
+}
+
+.course-detail-card:hover {
+  border-color: var(--primary-color);
+  box-shadow: 0 10px 30px rgba(0, 255, 136, 0.15);
+}
+
+.course-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.course-icon {
+  min-width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--accent-color), var(--primary-color));
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0, 212, 255, 0.3);
+}
+
+.course-icon i {
+  font-size: 2rem;
+  color: var(--dark-bg);
+}
+
+.course-meta h3 {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--dark-bg);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+}
+
+.module-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: var(--light-bg);
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--gray);
+}
+
+.course-description {
+  font-size: 1.05rem;
+  color: var(--gray);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+.course-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.feature-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  background: linear-gradient(135deg, rgba(0, 255, 136, 0.1), rgba(0, 212, 255, 0.1));
+  border: 2px solid var(--primary-color);
+  border-radius: 25px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--dark-bg);
+}
+
+.feature-tag i {
+  color: var(--primary-color);
+}
+
+.recipes-showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.recipe-showcase-card {
+  background-color: var(--white);
+  border-radius: 16px;
+  overflow: hidden;
+  border: 2px solid var(--light-bg);
+  transition: all 0.3s;
+}
+
+.recipe-showcase-card:hover {
+  border-color: var(--primary-color);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 35px rgba(0, 255, 136, 0.15);
+}
+
+.recipe-image-container {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--dark-bg), #1a1f3a);
+}
+
+.recipe-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s;
+}
+
+.recipe-showcase-card:hover .recipe-overlay {
+  opacity: 1;
+}
+
+.recipe-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(0, 255, 136, 0.2), rgba(0, 212, 255, 0.2));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.recipe-showcase-card:hover .recipe-overlay {
+  opacity: 1;
+}
+
+.recipe-overlay i {
+  font-size: 3rem;
+  color: var(--white);
+}
+
+.recipe-info {
+  padding: 1.5rem;
+}
+
+.recipe-info h4 {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--dark-bg);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+}
+
+.recipe-stats {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.recipe-stat {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--gray);
+  font-weight: 600;
+}
+
+.recipe-stat i {
+  color: var(--primary-color);
+}
+
+.product-guarantee-section {
+  background: linear-gradient(135deg, var(--dark-bg), #1a1f3a);
+  padding: 3rem;
+  border-radius: 20px;
+  margin-bottom: 4rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.product-guarantee-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 30% 50%, rgba(0, 255, 136, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.guarantee-content {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  position: relative;
+  z-index: 1;
+}
+
+.guarantee-badge {
+  min-width: 150px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  border-radius: 50%;
+  box-shadow: 0 10px 35px rgba(0, 255, 136, 0.5);
+}
+
+.guarantee-badge i {
+  font-size: 3rem;
+  color: var(--dark-bg);
+  margin-bottom: 0.5rem;
+}
+
+.guarantee-badge span {
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: var(--dark-bg);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.guarantee-text h2 {
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--white);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+}
+
+.guarantee-text p {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.7;
+}
+
+.product-cta-final {
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  padding: 4rem 3rem;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.cta-content h2 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--dark-bg);
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+}
+
+.cta-content p {
+  font-size: 1.2rem;
+  color: var(--dark-bg);
+  margin-bottom: 2.5rem;
+  font-weight: 600;
+}
+
+.cta-content .btn-buy-large {
+  max-width: 500px;
+  margin: 0 auto 1.5rem;
+  background: linear-gradient(135deg, var(--secondary-color), #ff8555);
+}
+
+.cta-security {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: var(--dark-bg);
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.cta-security i {
+  font-size: 1.2rem;
+}
+
+/* Responsive - Product Detail Page */
+@media (max-width: 968px) {
+  .product-detail-hero {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .product-detail-info {
+    position: static;
+  }
+
+  .product-image-wrapper {
+    max-height: 400px;
+  }
+
+  .product-title {
+    font-size: 2rem;
+  }
+
+  .amount {
+    font-size: 2.8rem;
+  }
+
+  .section-heading {
+    font-size: 1.6rem;
+  }
+
+  .benefits-list-detailed {
+    grid-template-columns: 1fr;
+  }
+
+  .recipes-showcase-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  .guarantee-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .guarantee-text h2 {
+    font-size: 1.6rem;
+  }
+
+  .cta-content h2 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .product-detail-container {
+    padding: 2rem 0;
+  }
+
+  .product-image-wrapper {
+    max-height: 300px;
+  }
+
+  .product-title {
+    font-size: 1.6rem;
+  }
+
+  .product-description-main {
+    font-size: 1rem;
+  }
+
+  .amount {
+    font-size: 2.2rem;
+  }
+
+  .currency {
+    font-size: 1.4rem;
+  }
+
+  .product-price-section {
+    padding: 1.5rem;
+  }
+
+  .btn-buy-large {
+    padding: 1.2rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  .product-security-badges {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .section-heading {
+    font-size: 1.4rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .benefit-card {
+    flex-direction: column;
+    padding: 1.5rem;
+  }
+
+  .benefit-icon {
+    min-width: 50px;
+    height: 50px;
+  }
+
+  .benefit-icon i {
+    font-size: 1.5rem;
+  }
+
+  .course-detail-card {
+    padding: 1.5rem;
+  }
+
+  .course-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .course-icon {
+    min-width: 60px;
+    height: 60px;
+  }
+
+  .course-meta h3 {
+    font-size: 1.2rem;
+  }
+
+  .recipes-showcase-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-guarantee-section {
+    padding: 2rem 1.5rem;
+  }
+
+  .guarantee-badge {
+    min-width: 120px;
+    height: 120px;
+  }
+
+  .guarantee-badge i {
+    font-size: 2.5rem;
+  }
+
+  .guarantee-badge span {
+    font-size: 1rem;
+  }
+
+  .guarantee-text h2 {
+    font-size: 1.4rem;
+  }
+
+  .guarantee-text p {
+    font-size: 1rem;
+  }
+
+  .product-cta-final {
+    padding: 2.5rem 1.5rem;
+  }
+
+  .cta-content h2 {
+    font-size: 1.5rem;
+  }
+
+  .cta-content p {
+    font-size: 1rem;
+  }
+}
+
+.page-header {
+  background: linear-gradient(135deg, var(--dark-bg) 0%, #1a2f4a 100%);
+  color: var(--white);
+  padding: 3rem 0 1.5rem 0;
+  text-align: center;
+  position: relative; /* Necessário para posicionar os vídeos absolutely */
+  overflow: hidden; /* Garante que os vídeos não vazem */
+}
+
+/* Container e texto devem ficar acima dos vídeos */
+.page-header .container {
+  position: relative;
+  z-index: 1; /* Garante que o texto fique acima dos vídeos */
+}
+
+.page-header h1 {
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1;
+}
+
+.page-header p {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.8);
+  position: relative;
+  z-index: 1;
+}
+
+/* Additional styles for testimonials section */
+.testimonials-preview .btn-secondary {
+  background-color: var(--primary-color);
+  color: var(--dark-bg);
+  border-color: var(--primary-color);
+}
+
+/* Adicionando estilos para as novas páginas de perfil, compras e receitas */
+
+/* Profile Page Styles */
+.profile-form-container {
+  max-width: 800px;
+}
+
+.profile-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.form-section {
+  background: var(--light-bg);
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.form-section h2 {
+  margin-bottom: 1.5rem;
+  color: var(--dark-bg);
+  font-size: 1.5rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+}
+
+.form-hint {
+  color: var(--gray);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--dark-bg);
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: all 0.3s;
+  background-color: var(--white);
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(0, 255, 136, 0.1);
+}
+
+.form-group input:disabled {
+  background-color: #f5f5f5;
+  color: var(--gray);
+  cursor: not-allowed;
+}
+
+.form-group small {
+  display: block;
+  margin-top: 0.5rem;
+  color: var(--gray);
+  font-size: 0.85rem;
+}
+
+.alert {
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+.alert-success {
+  background-color: #d4edda;
+  color: #155724;
+  border: 2px solid #c3e6cb;
+}
+
+.alert-error {
+  background-color: #f8d7da;
+  color: #721c24;
+  border: 2px solid #f5c6cb;
+}
+
+/* Purchases Page Styles */
+.purchases-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.purchases-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.purchase-card {
+  display: grid;
+  grid-template-columns: 120px 1fr auto;
+  gap: 1.5rem;
+  background: var(--light-bg);
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s;
+}
+
+.purchase-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.purchase-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.purchase-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.placeholder-image {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--dark-bg);
+  font-weight: 800;
+  font-size: 0.9rem;
+}
+
+.purchase-details h3 {
+  margin-bottom: 0.5rem;
+  color: var(--dark-bg);
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+
+.purchase-date,
+.purchase-transaction {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--gray);
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+}
+
+.purchase-date svg,
+.purchase-transaction svg {
+  flex-shrink: 0;
+}
+
+.purchase-status {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.status-badge {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.status-approved {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.status-pending {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.status-cancelled {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+.purchase-amount {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--dark-bg);
+}
+
+/* Recipes Page Styles */
+.recipe-category-section {
+  margin-bottom: 3rem;
+}
+
+.category-title {
+  margin-bottom: 1.5rem;
+  color: var(--dark-bg);
+  font-weight: 900;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.category-title::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  border-radius: 2px;
+}
+
+.recipes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.recipe-card {
+  background: var(--light-bg);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s;
+}
+
+.recipe-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.recipe-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.recipe-card-content {
+  padding: 1.5rem;
+}
+
+.recipe-card-content h3 {
+  margin-bottom: 0.5rem;
+  color: var(--dark-bg);
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+
+.recipe-card-content p {
+  color: var(--gray);
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.recipe-card-meta {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  font-size: 0.85rem;
+  color: var(--gray);
+}
+
+.recipe-card .btn {
+  width: 100%;
+}
+
+/* Recipe Detail Styles */
+.recipe-detail {
+  max-width: 900px;
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  transition: all 0.3s;
+}
+
+.back-link:hover {
+  gap: 0.8rem;
+}
+
+.recipe-header {
+  margin-bottom: 3rem;
+}
+
+.recipe-image-large {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 20px;
+  margin-bottom: 2rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.recipe-header-info h1 {
+  margin-bottom: 1rem;
+  color: var(--dark-bg);
+  font-weight: 900;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+}
+
+.recipe-description {
+  color: var(--gray);
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.recipe-meta {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.recipe-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--dark-bg);
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.recipe-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.recipe-section h2 {
+  margin-bottom: 1.5rem;
+  color: var(--dark-bg);
+  font-weight: 900;
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: -0.5px;
+}
+
+.ingredients-list,
+.instructions-list {
+  background: var(--light-bg);
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.ingredients-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.ingredients-list li {
+  padding: 0.8rem 0;
+  border-bottom: 1px solid #e0e0e0;
+  color: var(--dark-bg);
+  font-weight: 600;
+}
+
+.ingredients-list li:last-child {
+  border-bottom: none;
+}
+
+.ingredients-list li::before {
+  content: "✓";
+  color: var(--primary-color);
+  font-weight: 900;
+  margin-right: 1rem;
+  font-size: 1.2rem;
+}
+
+.instructions-list {
+  padding-left: 2.5rem;
+}
+
+.instructions-list li {
+  padding: 1rem 0;
+  color: var(--dark-bg);
+  line-height: 1.6;
+  font-weight: 600;
+}
+
+.instructions-list li::marker {
+  color: var(--primary-color);
+  font-weight: 900;
+  font-size: 1.2rem;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 768px) {
+  .purchase-card {
+    grid-template-columns: 80px 1fr;
+    gap: 1rem;
+  }
+
+  .purchase-image {
+    width: 80px;
+    height: 80px;
+  }
+
+  .purchase-status {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #e0e0e0;
+  }
+
+  .recipe-content {
+    grid-template-columns: 1fr;
+  }
+
+  .recipe-image-large {
+    height: 250px;
+  }
+
+  .recipe-header-info h1 {
+    font-size: 1.8rem;
+  }
+
+  .recipes-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-section {
+    padding: 1.5rem;
+  }
+}
+
+/* Adding pulse animation for video play button */
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 30px rgba(0, 255, 136, 0.8), 0 0 60px rgba(0, 255, 136, 0.4);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 40px rgba(0, 255, 136, 1), 0 0 80px rgba(0, 255, 136, 0.6);
+  }
+}
+
+/* Video testimonial card hover effects */
+.video-testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 50px rgba(0, 255, 136, 0.5);
+  border-color: rgba(0, 255, 136, 0.6);
+}
+
+/* Responsive adjustments for video hero section */
+@media (max-width: 768px) {
+  .video-hero-section {
+    min-height: 250px !important;
+    padding: 40px 0 !important;
+  }
+
+  .video-hero-section h1 {
+    font-size: 2.5rem !important;
+  }
+
+  .video-hero-section p {
+    font-size: 1.1rem !important;
+  }
+
+  /* Ensure video fits properly in mobile viewport */
+  .video-hero-section video {
+    object-fit: cover !important;
+    max-height: 250px !important;
+  }
+}
+
+/* Final check and cleanup for consistency */
+/* No further specific changes identified outside the provided updates. */
